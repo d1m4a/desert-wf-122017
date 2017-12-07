@@ -12,11 +12,11 @@
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <header class="welcome-header"><a class="section-btn welcome-btn" href="#">Авторизоваться</a></header>
-    <section class="section welcome">
+    <section class="section welcome"><img class="welcome-bg" src="/assets/images/bg.jpg">
+      <header class="welcome-header"><a class="section-btn welcome-btn" href="#">Авторизоваться</a></header>
       <div class="welcome-block">
         <div class="welcome-img">
-          <div class="welcome-img__wrapper"><img class="welcome-foto" src="/assets/images/foto.jpg" alt="Мое фото"></div>
+          <div class="welcome-img__wrapper"><a class="welcome-foto__link" href="/about.html"><img class="welcome-foto" src="/assets/images/foto.jpg" alt="Мое фото"></a></div>
         </div>
         <div class="welcome-name"> 
           <h1>Дмитрий Чех</h1>
@@ -24,22 +24,22 @@
         </div>
         <div class="welcome-social">
           <ul class="social-icons">
-            <li class="vk"></li>
-            <li class="git"></li>
-            <li class="in"></li>
+            <li class="social-icons__item"><a class="social-icons__link social-icons__vk" href="#" title="соц сети"></a></li>
+            <li class="social-icons__item"><a class="social-icons__link social-icons__git" href="#" title="соц сети"></a></li>
+            <li class="social-icons__item"><a class="social-icons__link social-icons__in" href="#" title="соц сети"></a></li>
           </ul>
         </div>
         <nav class="welcome-menu">
-          <ul class="welcome-menu">
-            <li class="welcome-menu__item">Мои работы</li>
-            <li class="welcome-menu__item">Обо мне</li>
-            <li class="welcome-menu__item">Блог</li>
+          <ul class="welcome-menu__list">
+            <li class="welcome-menu__item"> <a class="welcome-menu__link" href="#">Мои работы</a></li>
+            <li class="welcome-menu__item"> <a class="welcome-menu__link" href="#">Обо мне</a></li>
+            <li class="welcome-menu__item"> <a class="welcome-menu__link" href="#">Блог</a></li>
           </ul>
         </nav>
       </div>
+      <div class="welcome-desc__bottom">
+        <p>© Дмитрий Чех | создано с любовью в LoftSchool | 2017-2018</p>
+      </div>
     </section>
-    <div class="welcome-desc__bottom">
-      <p>© Дмитрий Чех | создано с любовью в LoftSchool | 2017-2018</p>
-    </div>
   </body>
 </html>

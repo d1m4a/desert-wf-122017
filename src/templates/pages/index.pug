@@ -4,27 +4,35 @@ block variables
   - var title = 'Добро пожаловать в пустыню'
 
 block content
-    header.welcome-header
-        a(href="#").section-btn.welcome-btn Авторизоваться
     section.section.welcome
+        img(src="/assets/images/bg.jpg").welcome-bg
+        header.welcome-header
+            a(href="#").section-btn.welcome-btn Авторизоваться
         .welcome-block
             .welcome-img
                 .welcome-img__wrapper
-                    img(src="/assets/images/foto.jpg" alt="Мое фото").welcome-foto
+                    a(href="/about.html").welcome-foto__link
+                        img(src="/assets/images/foto.jpg" alt="Мое фото").welcome-foto
             .welcome-name 
                 h1 Дмитрий Чех
                 p Личный сайт веб разработчика
             .welcome-social
                 ul.social-icons
-                    li.vk
-                    li.git
-                    li.in
+                    li.social-icons__item
+                        a(href="#" title="соц сети").social-icons__link.social-icons__vk
+                    li.social-icons__item
+                        a(href="#" title="соц сети").social-icons__link.social-icons__git
+                    li.social-icons__item
+                        a(href="#" title="соц сети").social-icons__link.social-icons__in
             nav.welcome-menu
-                ul.welcome-menu
-                    li.welcome-menu__item Мои работы
-                    li.welcome-menu__item Обо мне
-                    li.welcome-menu__item Блог
+                ul.welcome-menu__list
+                    li.welcome-menu__item 
+                        a(href="#").welcome-menu__link Мои работы
+                    li.welcome-menu__item 
+                        a(href="#").welcome-menu__link Обо мне
+                    li.welcome-menu__item 
+                        a(href="#").welcome-menu__link Блог
+            
+        .welcome-desc__bottom
+            p © Дмитрий Чех | создано с любовью в LoftSchool | 2017-2018
         
-    .welcome-desc__bottom
-        p © Дмитрий Чех | создано с любовью в LoftSchool | 2017-2018
-    
