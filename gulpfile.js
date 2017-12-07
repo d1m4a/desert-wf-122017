@@ -1,18 +1,18 @@
-const gulp         = require('gulp');
+const gulp          = require('gulp');
 
-const sass         = require('gulp-sass');
-const pug          = require('gulp-pug');
+const sass          = require('gulp-sass');
+const pug           = require('gulp-pug');
 
-const notify       = require('gulp-notify');
-const rename       = require('gulp-rename');
-const sourcemaps   = require('gulp-sourcemaps');
+const notify        = require('gulp-notify');
+const rename        = require('gulp-rename');
+const sourcemaps    = require('gulp-sourcemaps');
 
-const del          = require('del');
+const del           = require('del');
 
-const browserSync  = require('browser-sync').create();
+const browserSync   = require('browser-sync').create();
 
-const gulpWebpack = require('gulp-webpack');
-const webpack = require('webpack');
+const gulpWebpack   = require('gulp-webpack');
+const webpack       = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
 
@@ -24,16 +24,21 @@ const webpackConfig = require('./webpack.config.js');
 const paths = {
     root: './build',
     templates: { 
-        pages: 'app/templates/pages/*.pug',
-        src: 'app/templates/**/*.pug'
+        pages: 'src/templates/pages/*.pug',
+        src: 'src/templates/**/*.pug'
     },
     styles: {
         src: 'src/styles/**/*.scss',
-        dest: 'build/assets/styles/'
+        dest: 'build/assets/styles/',
+        all: 'src/styles/**/'
     },
     images: {
         src: 'src/images/**/*.*',
         dest: 'build/assets/images/'
+    },
+    fonts: {
+        src: 'src/fonts/**/*.*',
+        dest: 'build/assets/fonts/'
     },
     scripts: {
         src: 'src/scripts/**/*.js',
@@ -53,6 +58,8 @@ gulp.task('server', function() {
     server: paths.root
   });
   browserSync.watch(paths.root + '**/*.*', browserSync.reload )
+  browserSync.watch(paths.templates.pages + '**/*.*', browserSync.reload )
+  browserSync.watch('src/styles/common/*.scss', browserSync.reload )
 });
 
 // ////////////////////////////////////////////////
@@ -77,7 +84,8 @@ gulp.task('templates', function(){
 gulp.task('styles', function() {
     return gulp.src('./src/styles/app.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(sass({outputStyle: 'compressed',
+                includePaths: require('node-normalize-scss').includePaths}))
     .pipe(sourcemaps.write())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(paths.styles.dest))
@@ -109,13 +117,19 @@ gulp.task('scripts', function(){
 
  // ////////////////////////////////////////////////
 //
-// копируем картинки в build 
+// копируем картинки и шрифты в build 
 //
 // // /////////////////////////////////////////////
 
 gulp.task('images', function(){
     return gulp.src(paths.images.src)
     .pipe(gulp.dest(paths.images.dest))
+    .pipe(notify("images is copy"));
+ });
+
+ gulp.task('fonts', function(){
+    return gulp.src(paths.fonts.src)
+    .pipe(gulp.dest(paths.fonts.dest))
     .pipe(notify("images is copy"));
  });
 
@@ -127,10 +141,10 @@ gulp.task('images', function(){
 // // /////////////////////////////////////////////
 
 gulp.task('watch',function(){
-  gulp.watch(paths.styles.src, styles);
-  gulp.watch(paths.templates.src, templates);
-  gulp.watch(paths.images.src, images);
-  gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.templates.src, gulp.series('templates'));
+    gulp.watch(paths.styles.src, gulp.series('styles'));
+    gulp.watch(paths.images.src, gulp.series('images'));
+    gulp.watch(paths.scripts.src, gulp.series('scripts'));
 });
 
 
