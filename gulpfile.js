@@ -27,27 +27,27 @@ const webpackConfig = require('./webpack.config.js');
 //
 // // /////////////////////////////////////////////
 const paths = {
-    root: './docs',
+    root: './build',
     templates: { 
         pages: 'src/templates/pages/*.pug',
         src: 'src/templates/**/*.pug'
     },
     styles: {
         src: 'src/styles/**/*.scss',
-        dest: 'docs/assets/styles/'
+        dest: 'build/assets/styles/'
     },
     images: {
         src: 'src/images/*.*',
-        dest: 'docs/assets/images/',
+        dest: 'build/assets/images/',
         sprites: 'src/images/icons/*.svg'
     },
     fonts: {
         src: 'src/fonts/*.*',
-        dest: 'docs/assets/fonts/'
+        dest: 'build/assets/fonts/'
     },
     scripts: {
         src: 'src/scripts/**/*.js',
-        dest: 'docs/assets/scripts/'
+        dest: 'build/assets/scripts/'
     }
 };
 
@@ -153,7 +153,7 @@ gulp.task('images', function(){
  });
 
 
- ghpages.publish('docs', function(err) {});
+ ghpages.publish('build', function(err) {});
 
 // ///////////////////////////////////////////////////////
 //
