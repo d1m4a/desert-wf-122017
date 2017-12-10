@@ -27,27 +27,27 @@ const webpackConfig = require('./webpack.config.js');
 //
 // // /////////////////////////////////////////////
 const paths = {
-    root: './build',
+    root: './docs/build',
     templates: { 
         pages: 'src/templates/pages/*.pug',
         src: 'src/templates/**/*.pug'
     },
     styles: {
         src: 'src/styles/**/*.scss',
-        dest: 'build/assets/styles/'
+        dest: 'docs/build/assets/styles/'
     },
     images: {
         src: 'src/images/*.*',
-        dest: 'build/assets/images/',
+        dest: 'docs/build/assets/images/',
         sprites: 'src/images/icons/*.svg'
     },
     fonts: {
         src: 'src/fonts/*.*',
-        dest: 'build/assets/fonts/'
+        dest: 'docs/build/assets/fonts/'
     },
     scripts: {
         src: 'src/scripts/**/*.js',
-        dest: 'build/assets/scripts/'
+        dest: 'docs/build/assets/scripts/'
     }
 };
 
