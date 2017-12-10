@@ -6,10 +6,18 @@
 
     &-item{
         display: inline-block;
-        margin-right: 15px;
+        margin-right: 30px;
 
         &:last-child{
             margin: 0;
         }
     }
+}
+.social-item__link .author-card__icon{
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.social-item__link:hover .author-card__icon{
+    opacity: .6;
 }

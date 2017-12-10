@@ -7,9 +7,7 @@ const pug           = require('gulp-pug');
 const rename        = require('gulp-rename');
 const autoprefixer  = require('gulp-autoprefixer');
 const sourcemaps    = require('gulp-sourcemaps');
-//const imagemin      = require('gulp-imagemin');
 const svgSprite     = require('gulp-svg-sprites');
-const ghpages       = require('gh-pages');
 
 const del           = require('del');
 
@@ -152,9 +150,6 @@ gulp.task('images', function(){
     //.pipe(notify("images is copy"));
  });
 
-
- ghpages.publish('build', function(err) {});
-
 // ///////////////////////////////////////////////////////
 //
 // Задача watch
@@ -175,11 +170,6 @@ gulp.task('watch',function(){
 
 gulp.task('default', gulp.series(
     'clean',
-    //'styles',
-    //'templates',
-    //'images',
-    //'sprites',
-    //'scripts',
     gulp.parallel('styles', 'templates', 'images', 'sprites', 'scripts'),
     gulp.parallel('watch', 'server')
 ));
