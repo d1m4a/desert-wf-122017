@@ -9,6 +9,7 @@ const autoprefixer  = require('gulp-autoprefixer');
 const sourcemaps    = require('gulp-sourcemaps');
 //const imagemin      = require('gulp-imagemin');
 const svgSprite     = require('gulp-svg-sprites');
+const ghpages       = require('gh-pages');
 
 const del           = require('del');
 
@@ -150,6 +151,9 @@ gulp.task('images', function(){
     .pipe(gulp.dest(paths.fonts.dest));
     //.pipe(notify("images is copy"));
  });
+
+
+ ghpages.publish('build', function(err) {});
 
 // ///////////////////////////////////////////////////////
 //
