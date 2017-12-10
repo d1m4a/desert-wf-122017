@@ -3,10 +3,12 @@ const gulp          = require('gulp');
 const sass          = require('gulp-sass');
 const pug           = require('gulp-pug');
 
-const notify        = require('gulp-notify');
+//const notify        = require('gulp-notify');
 const rename        = require('gulp-rename');
 const autoprefixer  = require('gulp-autoprefixer');
 const sourcemaps    = require('gulp-sourcemaps');
+//const imagemin      = require('gulp-imagemin');
+const svgSprite     = require('gulp-svg-sprites');
 
 const del           = require('del');
 
@@ -34,11 +36,12 @@ const paths = {
         dest: 'build/assets/styles/'
     },
     images: {
-        src: 'src/images/**/*.*',
-        dest: 'build/assets/images/'
+        src: 'src/images/*.*',
+        dest: 'build/assets/images/',
+        sprites: 'src/images/icons/*.svg'
     },
     fonts: {
-        src: 'src/fonts/**/*.*',
+        src: 'src/fonts/*.*',
         dest: 'build/assets/fonts/'
     },
     scripts: {
@@ -48,19 +51,17 @@ const paths = {
 };
 
 
-// ////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////
 //
 // Настройка локального сервера Browser-sync с "живой" перезагрузкой
 //
-// // /////////////////////////////////////////////
+// // /////////////////////////////////////////////////////////////////
 
 gulp.task('server', function() {
   browserSync.init({
     server: paths.root
   });
   browserSync.watch(paths.root + '**/*.*', browserSync.reload )
-  //browserSync.watch(paths.templates.pages + '**/*.*', browserSync.reload )
-  //browserSync.watch('src/styles/common/*.scss', browserSync.reload )
 });
 
 // ////////////////////////////////////////////////
@@ -120,6 +121,18 @@ gulp.task('scripts', function(){
     //.pipe(notify("webpack is done"));
  });
 
+ // ///////////////////////////////////////////////////////////////
+//
+// делаем sprite из svg иконок и кладем его в папку назначения 
+//
+// // /////////////////////////////////////////////////////////////
+
+gulp.task('sprites', function () {
+    return gulp.src(paths.images.sprites)
+        .pipe(svgSprite())
+        .pipe(gulp.dest(paths.images.dest));
+});
+
  // ////////////////////////////////////////////////
 //
 // копируем картинки и шрифты в build 
@@ -138,17 +151,19 @@ gulp.task('images', function(){
     //.pipe(notify("images is copy"));
  });
 
-// ////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////
 //
 // Задача watch
-// Отслеживает любые изменения в папке src
+// Отслеживает любые изменения в папках с исходниками
 //
-// // /////////////////////////////////////////////
+// // ////////////////////////////////////////////////////
 
 gulp.task('watch',function(){
-    gulp.watch(paths.styles.src, gulp.series('styles')).on("change", reload);
+    //gulp.watch(paths.styles.src, gulp.series('styles')); //так не работает перезагрузка страницы
+    gulp.watch(paths.styles.src, gulp.series('styles')).on("change", reload); // а так работает
     gulp.watch(paths.templates.src, gulp.series('templates'));
     gulp.watch(paths.images.src, gulp.series('images'));
+    gulp.watch(paths.images.sprites, gulp.series('sprites'));
     gulp.watch(paths.scripts.src, gulp.series('scripts'));
 });
 
@@ -156,6 +171,11 @@ gulp.task('watch',function(){
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('styles', 'templates', 'images', 'scripts'),
+    //'styles',
+    //'templates',
+    //'images',
+    //'sprites',
+    //'scripts',
+    gulp.parallel('styles', 'templates', 'images', 'sprites', 'scripts'),
     gulp.parallel('watch', 'server')
 ));

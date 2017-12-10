@@ -4,35 +4,55 @@ block variables
   - var title = 'Добро пожаловать в пустыню'
 
 block content
-    section.section.welcome
-        //img(src="/assets/images/bg.jpg").welcome-bg
-        header.welcome-header
-            a(href="#").section-btn.welcome-btn Авторизоваться
-        .welcome-block
-            .welcome-img
-                .welcome-img__wrapper
-                    a(href="/about.html").welcome-foto__link
-                        img(src="/assets/images/foto.jpg" alt="Мое фото").welcome-foto
-            .welcome-name 
-                h1 Дмитрий Чех
-                p Личный сайт веб разработчика
-            .welcome-social
-                ul.social-icons
-                    li.social-icons__item
-                        a(href="#" title="соц сети").social-icons__link.social-icons__vk
-                    li.social-icons__item
-                        a(href="#" title="соц сети").social-icons__link.social-icons__git
-                    li.social-icons__item
-                        a(href="#" title="соц сети").social-icons__link.social-icons__in
-            nav.welcome-menu
-                ul.welcome-menu__list
-                    li.welcome-menu__item 
-                        a(href="#").welcome-menu__link Мои работы
-                    li.welcome-menu__item 
-                        a(href="#").welcome-menu__link Обо мне
-                    li.welcome-menu__item 
-                        a(href="#").welcome-menu__link Блог
-            
-        footer.welcome-desc__bottom
-            p © Дмитрий Чех | создано с любовью в LoftSchool | 2017-2018
-        
+    .welcome
+        .welcome__topbar
+            a.welcome__auth-button#js-auth-btn(href='#auth') Авторизоваться
+        .welcome__main
+            .welcome__flip#js-flipper
+                .welcome__hello
+                    .hello-card
+                        .hello-card__main
+                            .hello-card__author
+                                .author-card.author-card_welcome
+                                    .author-card__img-wrap.author-card__img-wrap_welcome
+                                        img.author-card__img(src='assets/images/foto.jpg' alt='Чех Дмитрий')
+                                    .author-card__title.author-card__title_welcome Чех Дмитрий
+                                    p.author-card__text.author-card__text_welcome Личный сайт веб разработчика
+                            .hello-card__social
+                               // +social(social, 'welcome').social
+                               include ../common/social.pug
+                        .hello-card__footer
+                            nav.hello-card__nav
+                                include ../common/welcome-menu.pug
+                .welcome__auth
+                    .hello-card.hello-card_auth
+                        form.hello-card__form.js-authform(action='/login' method='POST')
+                            .hello-card__main
+                                .title_auth.hello-card__header Авторизуйтесь
+                                label.hello-card__label-icon Логин
+                                    input(type='text' name='login' required='required' placeholder='Логин').hello-card__input
+                                    .hello-card__icon-wrapper
+                                        //+iconsvg('login')(class='hello-card__icon hello-card__icon_login')
+                                label.hello-card__label-icon Пароль
+                                    input(type='password' name='password' required='required' placeholder='Пароль').hello-card__input
+                                    .hello-card__icon-wrapper
+                                        //+iconsvg('password')(class='hello-card__icon hello-card__icon_password')
+                                label.hello-card__label-checkbox Я человек
+                                    input(type='checkbox' name='ishuman').hello-card__checkbox
+                                    //+iconsvg('check')(class='hello-card__checkbox-check')
+                                span.hello-card__question Вы точно не робот?
+                                label.hello-card__label-radio
+                                    input(type='radio' name='norobot' value='yes').hello-card__radio
+                                    span.hello-card__label-radio-text Да
+                                label.hello-card__label-radio
+                                    input(type='radio' name='norobot' value='no').hello-card__radio
+                                    span.hello-card__label-radio-text Не уверен
+                            .hello-card__footer
+                                .hello-card__nav
+                                    ul.hello-card__list
+                                        li.hello-card__item
+                                            a.hello-card__link(href='#welcome') На главную
+                                        li.hello-card__item
+                                            button.hello-card__link(type='submit') Войти
+
+        .welcome__footer #[span.welcome__footer-author © Чех Дмитрий] создано с любовью в LoftSchool | 2016
