@@ -1,0 +1,263 @@
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 89.14291881273601em 348.2em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../svg/sprite.png");
+}
+
+
+
+  .icon.about_bg_left:before {
+      background-position: 0em 0em;
+      width: 88.75921363805813em;
+      height: 100em;
+  }
+
+
+
+
+  .icon.about_bg_right:before {
+      background-position: 0em -100em;
+      width: 89.14291881273601em;
+      height: 100em;
+  }
+
+
+
+
+  .icon.arrow_down:before {
+      background-position: 0em -200em;
+      width: 2.518em;
+      height: 1.6164em;
+  }
+
+
+
+
+  .icon.check:before {
+      background-position: 0em -201.7em;
+      width: 1.8164000000000002em;
+      height: 1.3922em;
+  }
+
+
+
+
+  .icon.envelope:before {
+      background-position: 0em -203.1em;
+      width: 2.2012em;
+      height: 1.7295000000000003em;
+  }
+
+
+
+
+  .icon.envelope2:before {
+      background-position: 0em -204.9em;
+      width: 2.3em;
+      height: 1.6390999999999998em;
+  }
+
+
+
+
+  .icon.envelope_n:before {
+      background-position: 0em -206.6em;
+      width: 4.5em;
+      height: 4.5em;
+  }
+
+
+
+
+  .icon.github:before {
+      background-position: 0em -211.1em;
+      width: 2.6em;
+      height: 2.2em;
+  }
+
+
+
+
+  .icon.github_round:before {
+      background-position: 0em -213.3em;
+      width: 5em;
+      height: 5em;
+  }
+
+
+
+
+  .icon.hamburger:before {
+      background-position: 0em -218.3em;
+      width: 4em;
+      height: 3.5em;
+  }
+
+
+
+
+  .icon.in:before {
+      background-position: 0em -221.8em;
+      width: 2.4em;
+      height: 2.2938em;
+  }
+
+
+
+
+  .icon.in_round:before {
+      background-position: 0em -224.1em;
+      width: 5em;
+      height: 5em;
+  }
+
+
+
+
+  .icon.link:before {
+      background-position: 0em -229.1em;
+      width: 1.9125em;
+      height: 1.9125em;
+  }
+
+
+
+
+  .icon.login:before {
+      background-position: 0em -231.1em;
+      width: 1.4137em;
+      height: 1.5422em;
+  }
+
+
+
+
+  .icon.map_marker:before {
+      background-position: 0em -232.7em;
+      width: 1.5151em;
+      height: 2.1654em;
+  }
+
+
+
+
+  .icon.map_n:before {
+      background-position: 0em -234.9em;
+      width: 4.5em;
+      height: 4.5em;
+  }
+
+
+
+
+  .icon.password:before {
+      background-position: 0em -239.4em;
+      width: 1.6896999999999998em;
+      height: 1.5984em;
+  }
+
+
+
+
+  .icon.phone:before {
+      background-position: 0em -241em;
+      width: 1.8864em;
+      height: 1.8862999999999999em;
+  }
+
+
+
+
+  .icon.phone2:before {
+      background-position: 0em -242.9em;
+      width: 1.6492em;
+      height: 2.0947em;
+  }
+
+
+
+
+  .icon.phone_n:before {
+      background-position: 0em -245em;
+      width: 4.5em;
+      height: 4.5em;
+  }
+
+
+
+
+  .icon.portf_arrow_down:before {
+      background-position: 0em -249.5em;
+      width: 4.2736em;
+      height: 2.7435em;
+  }
+
+
+
+
+  .icon.portf_arrow_up:before {
+      background-position: 0em -252.3em;
+      width: 4.2736em;
+      height: 2.7435em;
+  }
+
+
+
+
+  .icon.skype:before {
+      background-position: 0em -255.1em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .icon.skype_n:before {
+      background-position: 0em -257.5em;
+      width: 60em;
+      height: 60em;
+  }
+
+
+
+
+  .icon.telegram_logo:before {
+      background-position: 0em -317.5em;
+      width: 23.8892em;
+      height: 23.8892em;
+  }
+
+
+
+
+  .icon.vk:before {
+      background-position: 0em -341.4em;
+      width: 3.0011em;
+      height: 1.7123000000000002em;
+  }
+
+
+
+
+  .icon.vk_round:before {
+      background-position: 0em -343.2em;
+      width: 5em;
+      height: 5em;
+  }
+
+
+
+
+

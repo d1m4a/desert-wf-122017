@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Добро пожаловать в пустыню</title>
+    <base href="/">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="stylesheet" href="/assets/images/css/sprite.css">
+    <link rel="stylesheet" href="/assets/styles/app.min.css">
+    <script src="/assets/scripts/bundle.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <section class="welcome">
+        <header class="welcome-header"><a class="welcome-btn" href="#" id="js-auth-btn">Авторизоваться</a></header>
+        <div class="welcome-block">
+          <div class="welcome-block__container">
+            <div class="welcome-block__wrapper">
+              <div class="welcome-block__front">
+                <div class="welcome-img">
+                  <div class="welcome-img__wrapper"><a class="welcome-foto__link" href="/about.html"><img class="welcome-foto" src="/assets/images/foto.jpg" alt="Мое фото"></a></div>
+                </div>
+                <div class="welcome-name"> 
+                  <h1>Дмитрий Чех</h1>
+                  <p>Личный сайт веб разработчика</p>
+                </div>
+                <div class="welcome-social">
+                  <ul class="social-icons">
+                    <li class="social-icons__item"><a class="social-icons__link" href="https://vk.com/dm_chekh" target="_blank" title="соц сети"><span class="social-icons__icon vk"></span></a></li>
+                    <li class="social-icons__item"><a class="social-icons__link" href="https://github.com/d1m4a" title="соц сети"><span class="social-icons__icon github"></span></a></li>
+                    <li class="social-icons__item"><a class="social-icons__link" href="#" title="соц сети"><span class="social-icons__icon in"></span></a></li>
+                  </ul>
+                </div>
+                <nav class="welcome-menu">
+                  <ul class="welcome-menu__list">
+                    <li class="welcome-menu__item"> <a class="welcome-menu__link" href="#">Мои работы</a></li>
+                    <li class="welcome-menu__item"> <a class="welcome-menu__link" href="#">Обо мне</a></li>
+                    <li class="welcome-menu__item"> <a class="welcome-menu__link" href="#">Блог</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="welcome-block__back">
+                <div class="auth-name">Авторизуйтесь</div>
+                <div class="auth-block">
+                  <form class="auth-form" action="#">
+                    <div class="auth-form__group"><span class="auth-form__icon"></span>
+                      <input class="auth-form__input" type="text" name="login" placeholder="Логин">
+                    </div>
+                    <div class="auth-form__group"><span class="auth-form__icon"></span>
+                      <input class="auth-form__input" type="password" name="password" placeholder="Пароль">
+                    </div>
+                    <div class="auth-form__center">
+                      <div class="auth-form__group">
+                        <input id="checkhum" type="checkbox" name="human">
+                        <label class="auth-form__text" for="checkhum">Я человек</label>
+                      </div>
+                      <div class="auth-form__group">
+                        <p class="auth-form__text auth-form__text__bold">Вы точно не робот?</p><span class="auth-form__radio">
+                          <input class="auth-form__input-radio" type="radio" name="robot">
+                          <label class="auth-form__text">Да</label></span><span class="auth-form__radio">
+                          <input class="auth-form__input-radio" type="radio" name="notrobot">
+                          <label class="auth-form__text">Не уверен</label></span>
+                      </div>
+                    </div>
+                    <div class="auth-menu">
+                      <ul class="auth-menu__list">
+                        <li class="auth-menu__item"> <a class="auth-menu__link" href="#">На главную</a></li>
+                        <li class="auth-menu__item"> 
+                          <button class="auth-menu__link" type="submit">Войти</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="welcome-desc__bottom">
+          <p>© Дмитрий Чех | создано с любовью в LoftSchool | 2017-2018</p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
