@@ -7,43 +7,50 @@ block content
     section.welcome
         .welcome__topbar.clearfix
             a.welcome__auth-button#js-auth-btn(href='#auth') Авторизоваться
-        .welcome__wrapper
-            .author-card
-                .author-card__img-wrapper
-                    img.author-card__img(src='assets/images/foto.jpg' alt='Чех Дмитрий')
-                .author-card__content
-                    .author-card__title 
-                        h1 Чех Дмитрий
-                    .author-card__subtitle 
-                        p Личный сайт веб разработчика
-                .author-card__social
-                    include ../common/social.pug
-                .author-card__footer
-                    include ../common/welcome-menu.pug
-            .auth__card.hidden
-                .auth-card__wrapper
-                    form.auth-card__form#js-authform(action='/' method='POST')
-                        .hello-card__main
-                            .title_auth.hello-card__header Авторизуйтесь
-                            label.hello-card__label-icon Логин
-                                input(type='text' name='login' required='required' placeholder='Логин')
-                            label.hello-card__label-icon Пароль
-                                input(type='password' name='password' required='required' placeholder='Пароль')
-                            label.hello-card__label-checkbox Я человек
-                                input(type='checkbox' name='ishuman').hello-card__checkbox
-                            span.hello-card__question Вы точно не робот?
-                            label.hello-card__label-radio
-                                input(type='radio' name='norobot' value='yes').hello-card__radio
-                                span.hello-card__label-radio-text Да
-                            label.hello-card__label-radio
-                                input(type='radio' name='norobot' value='no').hello-card__radio
-                                span.hello-card__label-radio-text Не уверен
-                        .hello-card__footer
-                            .hello-card__nav
-                                ul.hello-card__list
-                                    li.hello-card__item
-                                        a.hello-card__link(href='#welcome') На главную
-                                    li.hello-card__item
-                                        button.hello-card__link(type='submit') Войти
+        .welcome__wrapper.author-card__container
+            .author-card__cards
+                .author-card.author-card__front
+                    .author-card__img-wrapper
+                        img.author-card__img(src='assets/images/foto.jpg' alt='Чех Дмитрий')
+                    .author-card__content
+                        .author-card__title 
+                            h1 Чех Дмитрий
+                        .author-card__subtitle 
+                            p Личный сайт веб разработчика
+                    .author-card__social
+                        include ../common/social.pug
+                    .author-card__footer
+                        ul.author-menu
+                            li.author-menu__item
+                                a(href="/my-works.html").author-menu__link Мои работы
+                            li.author-menu__item
+                                a(href="/about.html").author-menu__link Обо мне
+                            li.author-menu__item
+                                a(href="/blog.html").author-menu__link Блог
+                .auth__card.author-card__back
+                    .auth-card__wrapper
+                        .auth__title Авторизуйтесь
+                        form.auth-card__form#js-authform(action='/' method='POST')
+                            .auth-card__main
+                                label.auth-card__label-icon-user
+                                    input(type='text' name='login' required='required' placeholder='Логин')
+                                label.auth-card__label-icon-key
+                                    input(type='password' name='password' required='required' placeholder='Пароль')
+                                label.auth-card__label-checkbox Я человек
+                                    input(type='checkbox' name='ishuman').auth-card__checkbox
+                                .auth-card__question Вы точно не робот?
+                                    label.auth-card__label-radio
+                                        input(type='radio' name='robot' value='yes').auth-card__radio
+                                        span.auth-card__label-radio-text Да
+                                    label.auth-card__label-radio
+                                        input(type='radio' name='norobot' value='no').auth-card__radio
+                                        span.auth-card__label-radio-text Не уверен
+                            .auth-card__footer
+                                .auth-card__nav
+                                    ul.auth-card__list
+                                        li.auth-card__item
+                                            a.auth-card__link(href='#') На главную
+                                        li.auth-card__item
+                                            button.auth-card__link(type='submit') Войти
 
         .welcome__footer #[span.welcome__footer-author © Чех Дмитрий] создано с любовью в LoftSchool | 2017
