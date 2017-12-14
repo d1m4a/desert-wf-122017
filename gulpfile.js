@@ -3,11 +3,12 @@ const gulp          = require('gulp');
 const sass          = require('gulp-sass');
 const pug           = require('gulp-pug');
 
-//const notify        = require('gulp-notify');
 const rename        = require('gulp-rename');
 const autoprefixer  = require('gulp-autoprefixer');
 const sourcemaps    = require('gulp-sourcemaps');
 const svgSprite     = require('gulp-svg-sprites');
+const cheerio       = require('gulp-cheerio');
+const cssunit       = require('gulp-css-unit');
 
 const del           = require('del');
 
@@ -73,7 +74,6 @@ gulp.task('templates', function(){
     return gulp.src(paths.templates.pages)
     .pipe(pug({ pretty: true }))
     .pipe(gulp.dest(paths.root));
-    //.pipe(notify("pug compile"));
  });
 
 // ////////////////////////////////////////////////
@@ -87,6 +87,10 @@ gulp.task('styles', function() {
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed',
                 includePaths: require('node-normalize-scss').includePaths}))
+    /*.pipe(cssunit({
+        type: 'px-torem',
+        rootSize: 16
+    })) */
     .pipe(sourcemaps.write())
     .pipe(autoprefixer({
         browsers: ['last 5 versions'],
@@ -94,7 +98,6 @@ gulp.task('styles', function() {
     }))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(paths.styles.dest));
-    //.pipe(notify("scss compile"));
 });
 
 // ////////////////////////////////////////////////
@@ -117,7 +120,6 @@ gulp.task('scripts', function(){
     return gulp.src('src/scripts/app.js')
     .pipe(gulpWebpack(webpackConfig, webpack)) 
     .pipe(gulp.dest(paths.scripts.dest));
-    //.pipe(notify("webpack is done"));
  });
 
  // ///////////////////////////////////////////////////////////////
@@ -128,7 +130,15 @@ gulp.task('scripts', function(){
 
 gulp.task('sprites', function () {
     return gulp.src(paths.images.sprites)
-        .pipe(svgSprite())
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');// удаляем инлайновое назначение цвета чтобы в css задать
+            }
+        }))
+        .pipe(svgSprite({
+            mode: "symbols",
+            preview: false
+        }))//к иконке теперь можно обращаться img/svg/symbols.svg#icon
         .pipe(gulp.dest(paths.images.dest));
 });
 
@@ -141,13 +151,11 @@ gulp.task('sprites', function () {
 gulp.task('images', function(){
     return gulp.src(paths.images.src)
     .pipe(gulp.dest(paths.images.dest));
-    //.pipe(notify("images is copy"));
  });
 
  gulp.task('fonts', function(){
     return gulp.src(paths.fonts.src)
     .pipe(gulp.dest(paths.fonts.dest));
-    //.pipe(notify("images is copy"));
  });
 
 // ///////////////////////////////////////////////////////

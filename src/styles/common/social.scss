@@ -6,18 +6,35 @@
 
     &-item{
         display: inline-block;
-        margin-right: 30px;
+        margin-right: 25px;
 
         &:last-child{
-            margin: 0;
+            margin-right: 0;
         }
     }
-}
-.social-item__link .author-card__icon{
-    opacity: 1;
-    transition: opacity .3s;
-}
 
-.social-item__link:hover .author-card__icon{
-    opacity: .6;
+    &-item__link{
+        display: block;
+    }
+
+    &-item__ic {
+        width: 25px;
+        height: 25px;
+        fill: #fff;
+        opacity: .7;
+        transition: all .5s ease;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &-vk{
+            width: 30px;
+            height: 21px;
+        }
+        &-github{
+            width: 30px;
+            height: 21px;
+        }
+    }
 }

@@ -1,7 +1,12 @@
-extends ../template
+extends ../layout
+include ../_mixins/svg
 
 block variables
     - var title = 'Обо мне'
 
 block content
-    h1 Обо мне
+    header.section.hero
+    section.section.about
+    section.section.maps
+    footer.section.footer
+

@@ -8,11 +8,11 @@
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="/assets/images/css/sprite.css">
     <link rel="stylesheet" href="/assets/styles/app.min.css">
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
+    <div class="preloader"></div>
     <main class="main">
       <section class="welcome">
         <div class="welcome__topbar clearfix"><a class="welcome__auth-button" id="js-auth-btn" href="#auth">Авторизоваться</a></div>
@@ -30,9 +30,18 @@
               </div>
               <div class="author-card__social">
                 <ul class="social">
-                  <li class="social-item"><a class="social-item__link" href="https://vk.com"><span class="author-card__icon icon vk"></span><span class="hidden">Vk</span></a></li>
-                  <li class="social-item"><a class="social-item__link" href="https://github.com"><span class="author-card__icon icon github"></span><span class="hidden">Github</span></a></li>
-                  <li class="social-item"><a class="social-item__link" href="https://linkedin.com"><span class="author-card__icon icon in"></span><span class="hidden">Linkedin</span></a></li>
+                  <li class="social-item"><a class="social-item__link" href="https://vk.com/dm_chekh" target="_blank">
+                      <svg class="social-item__ic social-item__ic-vk">
+                        <use xlink:href="/assets/images/svg/symbols.svg#vk"></use>
+                      </svg><span class="hidden">Vk</span></a></li>
+                  <li class="social-item"><a class="social-item__link" href="https://github.com/d1m4a" target="_blank">
+                      <svg class="social-item__ic social-item__ic-github">
+                        <use xlink:href="/assets/images/svg/symbols.svg#github"></use>
+                      </svg><span class="hidden">Github</span></a></li>
+                  <li class="social-item"><a class="social-item__link" href="https://www.linkedin.com/in/дмитрий-чех-3aa13490/" target="_blank">
+                      <svg class="social-item__ic social-item__ic-in">
+                        <use xlink:href="/assets/images/svg/symbols.svg#in"></use>
+                      </svg><span class="hidden">Linkedin</span></a></li>
                 </ul>
               </div>
               <div class="author-card__footer">
@@ -48,22 +57,40 @@
                 <div class="auth__title">Авторизуйтесь</div>
                 <form class="auth-card__form" id="js-authform" action="/" method="POST">
                   <div class="auth-card__main">
-                    <label class="auth-card__label-icon-user">
-                      <input type="text" name="login" required="required" placeholder="Логин">
-                    </label>
-                    <label class="auth-card__label-icon-key">
-                      <input type="password" name="password" required="required" placeholder="Пароль">
-                    </label>
-                    <label class="auth-card__label-checkbox">Я человек
-                      <input class="auth-card__checkbox" type="checkbox" name="ishuman">
-                    </label>
-                    <div class="auth-card__question">Вы точно не робот?
-                      <label class="auth-card__label-radio">
-                        <input class="auth-card__radio" type="radio" name="robot" value="yes"><span class="auth-card__label-radio-text">Да</span>
+                    <div class="auth-group__input">
+                      <label class="auth-card__label-input"><span class="auth-card__icon">
+                          <svg class="auth-card__ic auth-card__ic-login">
+                            <use xlink:href="/assets/images/svg/symbols.svg#login"></use>
+                          </svg></span>
+                        <input class="auth__input" type="text" name="login" required="required" placeholder="Логин">
                       </label>
-                      <label class="auth-card__label-radio">
-                        <input class="auth-card__radio" type="radio" name="norobot" value="no"><span class="auth-card__label-radio-text">Не уверен</span>
+                    </div>
+                    <div class="auth-group__input">
+                      <label class="auth-card__label"><span class="auth-card__icon">
+                          <svg class="auth-card__ic auth-card__ic-password">
+                            <use xlink:href="/assets/images/svg/symbols.svg#password"></use>
+                          </svg></span>
+                        <input class="auth__input" type="password" name="password" required="required" placeholder="Пароль">
                       </label>
+                    </div>
+                    <div class="auth-group">
+                      <div class="auth-card__human">
+                        <label class="auth-card__label-checkbox">Я человек
+                          <input class="auth-card__checkbox" type="checkbox" name="ishuman"><span class="auth-card__check--styled">
+                            <svg class="auth-card__ic-check">
+                              <use xlink:href="/assets/images/svg/symbols.svg#check"></use>
+                            </svg></span>
+                        </label>
+                      </div>
+                      <div class="auth-card__check-group">
+                        <div class="auth-card__question">Вы точно не робот?</div>
+                        <label class="auth-card__label-radio">
+                          <input class="auth-card__radio" type="radio" name="robot" value="yes">
+                        </label><span class="auth-card__label-radio-text">Да</span>
+                        <label class="auth-card__label-radio">
+                          <input class="auth-card__radio" type="radio" name="robot" value="no">
+                        </label><span class="auth-card__label-radio-text">Не уверен</span>
+                      </div>
                     </div>
                   </div>
                   <div class="auth-card__footer">
