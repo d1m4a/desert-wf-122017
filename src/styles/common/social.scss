@@ -1,3 +1,5 @@
+@import './colors';
+
 .social{
     list-style: none;
     margin: 0;
@@ -35,6 +37,36 @@
         &-github{
             width: 30px;
             height: 21px;
+        }
+    }
+}
+
+// new socials
+
+.socials{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item{
+        display: inline-block;
+        margin-right: 30px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    &__link{
+        display: block;
+    }
+    &__ic{
+        width: 30px;
+        height: 20px;
+        fill: #fff;
+        transition: all .3s ease;
+
+        &:hover{
+            fill: $dark-orange;
         }
     }
 }

@@ -1,0 +1,62 @@
+@import './colors';
+@import '../_mixins/_mixins';
+
+.user{
+    text-align: center;
+    color: #fff;
+
+    &__pic{
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 1.875rem;
+
+        &-img{
+            max-width: 100%;
+        }
+    }
+    &__name{
+        font-size: 2.1875rem;
+        font-family: 'robotomedium', sans-serif;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0.9375rem;
+    }
+    &__subtitle{
+        font-size: 1rem;
+        margin: 0;
+        font-family: 'robotoregular', sans-serif;
+        padding: 0;
+    }
+}
+
+.user-description{
+    padding: 0 1.25rem;
+    margin-bottom: 20px;
+
+    &__image{
+        overflow: hidden;
+        margin-bottom: 2.5rem;
+    }
+    &__avatar{
+        max-width: 100%;
+    }
+    &__title{
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    &__text{
+        color: $text;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-family: "robotoregular", sans-serif;
+
+        p{
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+    }
+}

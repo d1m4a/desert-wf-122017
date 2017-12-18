@@ -36,7 +36,7 @@ const paths = {
         dest: 'build/assets/styles/'
     },
     images: {
-        src: 'src/images/*.*',
+        src: 'src/images/**/*.*',
         dest: 'build/assets/images/',
         sprites: 'src/images/icons/*.svg'
     },

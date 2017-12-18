@@ -1,0 +1,58 @@
+@import './colors';
+@import '../_mixins/_mixins';
+
+.footer {
+	background: rgba(#373e42, .85);
+	height: 150px;
+
+    &__row {
+        @extend %clearfix;
+        padding: 0 5%;
+    }
+
+    &__row_top {
+        border-bottom: 1px solid rgba(#ffffff, .1);
+    }
+
+    &__left, &__right {
+        width: 50%;
+        float: left;
+    }
+
+    &__right {
+        text-align: right;
+    }
+
+    &__about, &__about-user-name {
+        font-size: 16px;
+        color: rgba(#fff, .5);
+    }
+
+    &__about {
+        padding-top: 15px;
+    }
+
+    &__about-user-name {
+        padding-top: 25px;
+    }
+}
+
+.nav-menu {
+	padding: 25px 0;
+
+    &__item {
+        display: inline-block;
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        font-size: 16px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+    }
+}

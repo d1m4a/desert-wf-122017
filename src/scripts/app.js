@@ -1,6 +1,10 @@
 const slider = require('./common/slider');
-const $ = require('jquery');
+const initMap = require('./common/initMap');
+/* const $ = require('jquery');*/
 
+
+slider(); /* иницииализируем слайдер */
 console.log('slider подключен');
 
-slider(); // иницииализируем слайдер 
+initMap(); /* инициализируем стилизацию карты */
+console.log('карта подключена');

@@ -6,7 +6,75 @@ block variables
 
 block content
     header.section.hero
+        .hero__socials
+            ul.socials
+                each item in ['vk','github','in']
+                    li.socials__item
+                        a(href="#").socials__link
+                            +svg(`socials__ic socials__ic-${item}`, `${item}`)
+        .hero__menu
+            a(href="#").menu
+                span.menu__gamburger
+        .hero__title
+            .section-title
+                img(src="assets/images/portfolio_header.svg", alt="портфолио").section-title__pic
+            .hero__user
+                .user
+                    .user__pic
+                        img(src="assets/images/foto.jpg", alt="Чех Дмитрий").user__pic-img
+                    .user__info
+                        .user__name  Чех Дмитрий
+                        .user__subtitle Личный сайт разработчика
+        .hero__arrow
+            .arrow-down
+                +svg('arrow-down__ic', 'arrow_down')
     section.section.about
-    section.section.maps
-    footer.section.footer
+        .about__side.about__left
+            svg(class="triangle triangle_fill_white" viewbox="0 0 1000 110" preserveAspectRatio="none")
+                    polygon(points="0,0 0,110 1000, 110")
+            .about__left-title
+                .block-title(style="background-image: url('assets/images/decor/about_header.png')")
+                    | Обо мне
+            .about__left-content
+                .user-description
+                    .user-description__image
+                        img(src="assets/images/foto.jpg", alt="Чех Дмитрий").user-description__avatar
+                    .user-description__title
+                        .block-subtitle Кто я
+                    .user-description__text
+                        p Я веб разработчик из Красноярска. Мне 32 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .about__side.about__right
+            svg(class="triangle triangle_fill_beige" viewbox="0 0 1000 110" preserveAspectRatio="none")
+                    polygon(points="0,110 1000,110 1000,0")
+            .about__right-title
+                .block-subtitle Чем я могу быть
+                    br
+                    | вам полезен
+            .about__right-desc.text-block
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nesciunt obcaecati amet atque enim alias fuga, qui sequi vero itaque.
+            .about__right-content
+                ul.skills__list
+                    li.skills__item
+                        //each
+                        svg(class="circles" viewBox="0 0 110 110")
+                            circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-25
+                        span.skills__item-title HTML &amp; CSS
+                    li.skills__item
+                        svg(class="circles" viewBox="0 0 110 110")
+                            circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-25
+                        span.skills__item-title HTML &amp; CSS
+
+    section.section.map
+        #map.map__wrapper
+
+        .map__contacts
+            .contacts__wrapper
+                .block-subtitle Контакты
+                .contacts__info
+                    ul.contacts__list
+                        li.contacts__item
+                            a(href="#").contacts__link.contacts__link-ic 
 
