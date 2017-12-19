@@ -5,7 +5,7 @@ function initMap() {
 
 		center: {lat: 56.026876, lng: 92.865734},
 
-		zoom: 18,
+		zoom: 12,
 
 		styles: [
             {
@@ -98,5 +98,5 @@ function initMap() {
         ]
 	});
 }
-window.initMap = initMap;
+//window.initMap = initMap;
 module.exports = initMap;

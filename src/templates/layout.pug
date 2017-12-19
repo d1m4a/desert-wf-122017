@@ -12,10 +12,11 @@ html
 
         link(rel='stylesheet' href='/assets/styles/app.min.css')
         
-        script(src='/assets/scripts/bundle.js' defer)
     body
         .preloader
         main.main
             block content
         
         include ./common/footer
+        
+        script(src='/assets/scripts/bundle.js' defer)

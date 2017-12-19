@@ -3,8 +3,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
     entry: {
-        initMap: "./src/scripts/common/initMap",
-        slider: "./src/scripts/common/slider",
+        js: "./src/scripts/app.js"
     },
     output: {
         filename: 'bundle.js'
