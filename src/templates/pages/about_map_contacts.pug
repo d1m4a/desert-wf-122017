@@ -1,0 +1,35 @@
+include ../_mixins/svg
+
+.map__contacts
+    .contacts__wrapper
+        .block-subtitle Контакты
+        .contacts__info
+            ul.contacts__list
+                -
+                    var contacts = [
+                        {
+                            link: 'skype:dmitry_peleev?chat',
+                            title: 'dmitry_peleev',
+                            icon: 'skype'
+                        },
+                        {
+                            link: 'mailto:dmitry.peleev@gmail.com',
+                            title: 'dmitry.peleev@gmail.com',
+                            icon: 'envelope'
+                        },
+                        {
+                            link: 'tel:89620717250',
+                            title: '+7 962 071 72 50',
+                            icon: 'phone'
+                        },
+                        {
+                            link: 'https://www.google.ru/maps/@56.0150407,92.8587531,14.25z',
+                            title: 'г. Красноярск',
+                            icon: 'map_marker'
+                        }
+                    ]
+                each item in contacts
+                    li.contacts__item
+                        a(href=item.link).contacts__link
+                            +svg(`contacts__ic contacts__ic-${item.icon}`, `${item.icon}`)
+                            span.contacts__link-text= item.title

@@ -52,29 +52,29 @@ block content
                     br
                     | вам полезен
             .about__right-desc.text-block
-                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nesciunt obcaecati amet atque enim alias fuga, qui sequi vero itaque.
+                p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
             .about__right-content
-                ul.skills__list
-                    li.skills__item
-                        //each
-                        svg(class="circles" viewBox="0 0 110 110")
-                            circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-25
-                        span.skills__item-title HTML &amp; CSS
-                    li.skills__item
-                        svg(class="circles" viewBox="0 0 110 110")
-                            circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-25
-                        span.skills__item-title HTML &amp; CSS
+                ul.skills
+                    each skill in skills
+                        each skillsArray, skillName in skill
+                            li.skills__item
+                                .skill-section
+                                    .skill-section__title= skillName
+                                    ul.skill-section__list
+                                        each skillTitle in skillsArray
+                                            li.skills-section__item
+                                                .skill
+                                                    svg(viewBox='0 0 110 110').skill__circle
+                                                        circle(r="100" cx="50%" cy="50%" fill="none").circle.circle__first
+                                                        circle(r="100" cx="50%" cy="50%" fill="none" transform="rotate(-90 55 55)").circle.circle__second
+                                                    .skill__name= skillTitle
+                        
 
     section.section.map
         #map.map__wrapper
+            script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhQNTgjvezECxXDnOfqiL3S36LVJp01z4&callback=initMap" async defer)
 
-        .map__contacts
-            .contacts__wrapper
-                .block-subtitle Контакты
-                .contacts__info
-                    ul.contacts__list
-                        li.contacts__item
-                            a(href="#").contacts__link.contacts__link-ic 
+            include ./about_map_contacts
+                                                                 
+
 

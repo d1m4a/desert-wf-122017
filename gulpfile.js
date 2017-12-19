@@ -9,7 +9,7 @@ const sourcemaps    = require('gulp-sourcemaps');
 const svgSprite     = require('gulp-svg-sprites');
 const cheerio       = require('gulp-cheerio');
 const cssunit       = require('gulp-css-unit');
-
+const fs            = require('fs');
 const del           = require('del');
 
 const browserSync   = require('browser-sync').create();
@@ -72,7 +72,9 @@ gulp.task('server', function() {
 
 gulp.task('templates', function(){
     return gulp.src(paths.templates.pages)
-    .pipe(pug({ pretty: true }))
+    .pipe(pug({ 
+        locals: JSON.parse(fs.readFileSync('./content.json', 'utf8')),
+        pretty: true }))
     .pipe(gulp.dest(paths.root));
  });
 

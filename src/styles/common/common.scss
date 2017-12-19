@@ -123,7 +123,7 @@ body{
     font-size: 63px;
     color: $title;
     margin: 0;
-    padding: 0;
+    padding: 40px;
     text-transform: uppercase;
     text-align: center;
     font-family: 'sansus', sans-serif;
@@ -132,39 +132,6 @@ body{
     background-size: contain;
 	background-position: center center;
 	background-repeat: no-repeat;
-
-    &:before, &:after{
-        content: '';
-        display: block;
-        width: 21px;
-        height: 10px;
-        position: absolute;
-    }
-    &:before{
-        background-image: url(../images/decor/elip_left_gray.png);
-        top: 50%;
-        right: -40px;
-        transform: translateY(-50%);
-    }
-    &:after{
-        background-image: url(../images/decor/elip_right_gray.png);
-        top: 50%;
-        left: -40px;
-        transform: translateY(-50%);
-    }
-}
-
-.block-subtitle{
-    font-size: 2.1875rem;
-    display: inline-block;
-    color: $text;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: 'sansus', sans-serif;
-    position: relative;
-    padding: 30px 40px;
 
     &:before, &:after{
         content: '';
@@ -185,4 +152,43 @@ body{
         left: 0;
         transform: translateY(-50%);
     }
+}
+
+.block-subtitle{
+    font-size: 2.1875rem;
+    display: inline-block;
+    color: $text;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'sansus', sans-serif;
+    position: relative;
+    padding: 0 40px;
+
+    &:before, &:after{
+        content: '';
+        display: block;
+        width: 21px;
+        height: 10px;
+        position: absolute;
+    }
+    &:before{
+        background-image: url(../images/decor/elip_left_gray.png);
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    &:after{
+        background-image: url(../images/decor/elip_right_gray.png);
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.text-block p{
+    font-family: "robotoregaular", sans-serif;
+    font-size: 1rem;
+    color: $text;
 }

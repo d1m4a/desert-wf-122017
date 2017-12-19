@@ -1,4 +1,32 @@
-  .circles {
+@import './colors';
+
+.skills{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill{
+  &-section__title{
+    font-family: "robotomedium", sans-serif;
+    font-size: 1.625rem;
+    color: $text;
+    margin-bottom: 15px;
+  }
+  &-section__list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+
+.skill__circle{
+  width: 120px;
+  height: 120px;
+}
+  
+  .circle{
     fill: none;
     stroke-width: 15;
   }
@@ -6,30 +34,11 @@
     stroke: #dfdcd5;
   }
   .circle__second {
-    stroke: #1bb696;
+    stroke: #e6ab3d;
     stroke-dasharray: .0010 282.6;
     transition: all 1s;
   }
   
-  .skills__item {
-    position: relative;
-    display: inline-block;
-    border: 1px solid #ccc;
-    width: 250px;
-    height: 250px;
-  }
-  
-  .skills__item-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1bb696;
-    font-weight: bold;
-  }
   .circles:hover .circle-0 {
      stroke-dasharray: .001 282.6;
   }

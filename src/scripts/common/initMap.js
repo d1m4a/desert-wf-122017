@@ -98,5 +98,5 @@ function initMap() {
         ]
 	});
 }
-
+window.initMap = initMap;
 module.exports = initMap;
