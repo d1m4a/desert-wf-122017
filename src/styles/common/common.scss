@@ -6,6 +6,10 @@ html, body{
     width: 100%;
     font-family: "Robotomedium";
     font-size: 16px;
+
+    @include  desktop{
+        font-size: 14px;
+    }
 }
 body{
     display: flex;

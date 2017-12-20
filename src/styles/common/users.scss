@@ -36,6 +36,10 @@
     padding: 0 1.25rem;
     margin-bottom: 20px;
 
+    @include  desktop{
+        padding: 0 5rem;
+    }
+
     &__image{
         overflow: hidden;
         margin-bottom: 2.5rem;

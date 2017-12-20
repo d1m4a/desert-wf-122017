@@ -1,18 +1,69 @@
 footer.footer
-    .footer__row.footer__row_top
+    .footer__wrapper
         .footer__left
+            .footer__about Этот сайт я сделал в рамках обучения в Школе 
+                span.footer__about-divider онлайн образования LoftSchool.
+            .footer__about-user-name © Дмитрий Чех 
+                span.footer__about-divider Создано с любовью в LoftSchool | 2017
+        .footer__center
             ul.nav-menu
-                each link in ['Мои работы', "Обо мне", "Блог", "Авторизация"]
+                -
+                    var nav = [
+                        {
+                            link: '/my-works.html',
+                            title: 'Мои работы',
+                        },
+                        {
+                            link: '/about.html',
+                            title: 'Обо мне',
+                        },
+                        {
+                            link: '/blog.html',
+                            title: 'Блог',
+                        },
+                        {
+                            link: '/index.html',
+                            title: 'Авторизация',
+                        }
+                    ]
+                each link in nav
                     li.nav-menu__item
-                        a(href="#").nav-menu__link= link
+                        a(href=link.link).nav-menu__link= link.title
+            ul.social
+                li.social-item
+                    a(href="https://vk.com/dm_chekh" target="_blank").social-item__link
+                        +svg('social-item__ic social-item__ic-vk', 'vk')
+                        span.hidden Vk
+                li.social-item
+                    a(href="https://github.com/d1m4a" target="_blank").social-item__link
+                        +svg('social-item__ic social-item__ic-github', 'github')
+                        span.hidden Github
+                li.social-item
+                    a(href="https://www.linkedin.com/in/дмитрий-чех-3aa13490/" target="_blank").social-item__link
+                        +svg('social-item__ic social-item__ic-in', 'in')
+                        span.hidden Linkedin
         .footer__right
-            ul.socials
-                each item in ['vk','github','in']
-                    li.socials__item
-                        a(href="#").socials__link
-                            +svg(`socials__ic socials__ic-${item}`, `${item}`)
-    .footer__row
-        .footer__left
-            .footer__about Я веб-разработчик из Красноярска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
-        .footer__right
-            .footer__about-user-name © Чех Дмитрий | создано с любовью в LoftSchool | 2017
+            ul.contacts__list
+                -
+                    var contacts = [
+                        {
+                            link: 'skype:dmitry_peleev?chat',
+                            title: 'dmitry_peleev',
+                        },
+                        {
+                            link: 'mailto:dmitry.peleev@gmail.com',
+                            title: 'dmitry.peleev@gmail.com',
+                        },
+                        {
+                            link: 'tel:89620717250',
+                            title: '+7 962 071 72 50',
+                        },
+                        {
+                            link: 'https://www.google.ru/maps/@56.0150407,92.8587531,14.25z',
+                            title: 'г. Красноярск',
+                        }
+                    ]
+                each item in contacts
+                    li.contacts__item
+                        a(href=item.link).contacts__link
+                            span.contacts__link-text= item.title

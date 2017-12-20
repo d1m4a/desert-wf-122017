@@ -49,16 +49,19 @@
         @content;
     }
 }
+// вызов через - @include  laptops{}
 @mixin laptops {
     @media (max-width: 992px){
         @content;
     }
 }
+// вызов через - @include  tablets{}
 @mixin tablets {
     @media (max-width: 768px){
         @content;
     }
 }
+// вызов через - @include  phones{}
 @mixin phones {
     @media (max-width: 480px){
         @content;

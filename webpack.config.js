@@ -9,9 +9,9 @@ const config = {
         filename: 'bundle.js'
     },
     plugins: [
-        new UglifyJSPlugin({
+        /*new UglifyJSPlugin({
             sourceMap: true
-        })
+        })*/
     ]
 };
 
