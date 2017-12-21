@@ -13,14 +13,84 @@
   <body>
     <div class="preloader"></div>
     <main class="main">
-      <h1>Мои работы</h1>
-      <div class="container">
+      <header class="section hero">
+        <div class="hero__socials">
+          <ul class="socials">
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__ic socials__ic-vk">
+                  <use xlink:href="/assets/images/svg/symbols.svg#vk"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__ic socials__ic-github">
+                  <use xlink:href="/assets/images/svg/symbols.svg#github"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__ic socials__ic-in">
+                  <use xlink:href="/assets/images/svg/symbols.svg#in"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+        <div class="hero__menu"><a class="menu" href="#login"><span class="menu__gamburger"></span></a></div>
+        <div class="hero__title">
+          <div class="section-title"><img class="section-title__pic" src="assets/images/portfolio_header.svg" alt="portfolio"/></div>
+          <div class="hero__user">
+            <div class="user">
+              <div class="user__pic"><img class="user__pic-img" src="assets/images/foto.jpg" alt="Чех Дмитрий"/></div>
+              <div class="user__info">
+                <div class="user__name"> Чех Дмитрий</div>
+                <div class="user__subtitle">Личный сайт разработчика</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__arrow">
+          <div class="arrow-down">
+            <svg class="arrow-down__ic">
+              <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
+            </svg>
+          </div>
+        </div>
+      </header>
+      <div class="triangle__wrapper">
+        <div class="triangle__side">
+          <svg class="triangle triangle_fill-white" viewbox="0 0 1000 110" preserveAspectRatio="none">
+            <polygon points="0,0 0,110 1000, 110"></polygon>
+          </svg>
+        </div>
+        <div class="triangle__side">
+          <svg class="triangle triangle_fill-white" viewbox="0 0 1000 110" preserveAspectRatio="none">
+            <polygon points="0,110 1000,110 1000,0"></polygon>
+          </svg>
+        </div>
+      </div>
+      <div class="works">
+        <div class="block-title" style="background-image: url('assets/images/decor/works_header.png');">Мои работы</div>
+      </div>
+      <div class="slide__container">
+        <div class="slide__text">
+          <div class="slide__text-wrapper">
+            <div class="slide__name">
+              <div class="block-subtitle">Сайт школы онлайн<br>образования</div>
+            </div>
+            <div class="slide_tech">
+              <ul class="tech__list">
+                <li class="tech__item">HTML,</li>
+                <li class="tech__item">CSS,</li>
+                <li class="tech__item">JavaScript</li>
+              </ul>
+            </div>
+            <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#">
+                <svg class="slide__ic-link">
+                  <use xlink:href="/assets/images/svg/symbols.svg#link"></use>
+                </svg><span class="slide__btn-text">Посмотреть сайт</span></a></div>
+          </div>
+        </div>
         <ul id="slides">
           <li class="slide showing"></li>
           <li class="slide"></li>
           <li class="slide"></li>
         </ul>
-        <div class="buttons">
+        <div class="slide__controls">
           <button class="control" id="previous">&lt;</button>
           <button class="control" id="next">&gt;</button>
         </div>

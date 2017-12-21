@@ -7,7 +7,7 @@ html, body{
     font-family: "Robotomedium";
     font-size: 16px;
 
-    @include  desktop{
+    @include  laptops{
         font-size: 14px;
     }
 }
@@ -120,6 +120,17 @@ body{
     }
     &_fill_white{
         fill: $lite-biege;
+    }
+    &_fill-white{
+        fill: $white;
+    }
+    &__wrapper{
+        display: flex;
+    }
+    &__side {
+        flex: 1;
+        width: 50%;
+        position: relative;
     }
 }
 

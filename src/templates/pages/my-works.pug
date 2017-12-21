@@ -1,8 +1,20 @@
 extends ../template
+include ../_mixins/svg
+include ../_mixins/header
 
 block variables
     - var title = 'Мои работы'
 
 block content
-    h1 Мои работы
+    +header('portfolio')
+    .triangle__wrapper
+        .triangle__side
+            svg(class="triangle triangle_fill-white" viewbox="0 0 1000 110" preserveAspectRatio="none")
+                    polygon(points="0,0 0,110 1000, 110")
+        .triangle__side
+            svg(class="triangle triangle_fill-white" viewbox="0 0 1000 110" preserveAspectRatio="none")
+                    polygon(points="0,110 1000,110 1000,0")
+    .works
+        .block-title(style="background-image: url('assets/images/decor/works_header.png')")
+            | Мои работы
     include ../common/slider

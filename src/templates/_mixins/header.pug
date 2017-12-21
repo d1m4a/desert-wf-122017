@@ -1,0 +1,26 @@
+include ../_mixins/svg
+
+mixin header(bg)
+    header.section.hero
+        .hero__socials
+            ul.socials
+                each item in ['vk','github','in']
+                    li.socials__item
+                        a(href="#").socials__link
+                            +svg(`socials__ic socials__ic-${item}`, `${item}`)
+        .hero__menu
+            a(href="#login").menu
+                span.menu__gamburger
+        .hero__title
+            .section-title
+                img(src=`assets/images/${bg}_header.svg`, alt=`${bg}`).section-title__pic
+            .hero__user
+                .user
+                    .user__pic
+                        img(src="assets/images/foto.jpg", alt="Чех Дмитрий").user__pic-img
+                    .user__info
+                        .user__name  Чех Дмитрий
+                        .user__subtitle Личный сайт разработчика
+        .hero__arrow
+            .arrow-down
+                +svg('arrow-down__ic', 'arrow_down')

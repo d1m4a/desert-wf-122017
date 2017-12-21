@@ -1,8 +1,22 @@
-.container
+.slide__container
+    .slide__text
+        .slide__text-wrapper
+            .slide__name
+                .block-subtitle Сайт школы онлайн
+                    br
+                    |образования
+            .slide_tech
+                ul.tech__list
+                    each tech in ['HTML,','CSS,','JavaScript']
+                        li.tech__item= tech
+            .slide__btn-wrapper
+                a(href="#").slide__btn-link
+                    +svg('slide__ic-link', 'link') 
+                    span.slide__btn-text Посмотреть сайт
     ul#slides
         li.slide.showing
         li.slide
         li.slide
-    .buttons
+    .slide__controls
         button.control#previous &lt;
         button.control#next &gt;

@@ -1,33 +1,13 @@
 extends ../layout
 include ../_mixins/svg
+include ../_mixins/header
 
 block variables
     - var title = 'Обо мне'
 
 block content
-    header.section.hero
-        .hero__socials
-            ul.socials
-                each item in ['vk','github','in']
-                    li.socials__item
-                        a(href="#").socials__link
-                            +svg(`socials__ic socials__ic-${item}`, `${item}`)
-        .hero__menu
-            a(href="#").menu
-                span.menu__gamburger
-        .hero__title
-            .section-title
-                img(src="assets/images/portfolio_header.svg", alt="портфолио").section-title__pic
-            .hero__user
-                .user
-                    .user__pic
-                        img(src="assets/images/foto.jpg", alt="Чех Дмитрий").user__pic-img
-                    .user__info
-                        .user__name  Чех Дмитрий
-                        .user__subtitle Личный сайт разработчика
-        .hero__arrow
-            .arrow-down
-                +svg('arrow-down__ic', 'arrow_down')
+    //include ../common/header
+    +header('portfolio')
     section.section.about
         .about__side.about__left
             svg(class="triangle triangle_fill_white" viewbox="0 0 1000 110" preserveAspectRatio="none")
