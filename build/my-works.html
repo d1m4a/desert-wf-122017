@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Мои работы</title>
-    <!--base(href="/")-->
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -12,7 +11,14 @@
   </head>
   <body>
     <div class="preloader" id="preloader">
-      <div id="spinner"></div>
+      <div class="spinner" id="spinner">
+        <svg class="preloader__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.043px" height="55.633px" viewBox="0 0 40.043 55.633" enable-background="new 0 0 40.043 55.633" xml:space="preserve">
+          <text transform="matrix(1 0 0 1 0 47.8398)">0</text>
+          <circle cx="20.021" cy="6" r="6"></circle>
+          <circle cx="20.021" cy="6" r="4.5"></circle>
+          <circle cx="20.021" cy="6" r="3"></circle>
+        </svg>
+      </div>
     </div>
     <main class="main">
       <header class="section hero">
@@ -32,7 +38,9 @@
                 </svg></a></li>
           </ul>
         </div>
-        <div class="hero__menu"><a class="menu" href="#menu"><span class="menu__gamburger"></span></a></div>
+        <div class="hero__menu">
+          <button class="menu__toggle menu__toggle-htx"><span>Меню</span></button>
+        </div>
         <div class="hero__title">
           <div class="section-title"><img class="section-title__pic" src="assets/images/portfolio_header.svg" alt="portfolio"/></div>
           <div class="hero__user">
@@ -68,157 +76,188 @@
       <div class="works">
         <div class="block-title" style="background-image: url('assets/images/decor/works_header.png');">Мои работы</div>
       </div>
-      <ul id="slides">
-        <li class="slide showing">
-          <div class="slide__container">
-            <div class="slide__text">
-              <div class="slide__text-wrapper">
-                <div class="slide__name">
-                  <div class="block-subtitle">Сайт школы онлайн образования</div>
+      <div class="slider">
+        <ul class="slides" id="slides">
+          <li class="slide showing">
+            <div class="slide__container">
+              <div class="slide__images">
+                <div class="slide__images-wrapper"><img src="./assets/images/slide/work-1.png" alt="Работа 1"></div>
+              </div>
+              <div class="slide__text">
+                <div class="slide__text-wrapper">
+                  <div class="slide__name">
+                    <div class="block-subtitle">Сайт школы онлайн образования</div>
+                  </div>
+                  <div class="slide__tech">
+                    <ul class="tech__list">
+                      <li class="tech__item">HTML,</li>
+                      <li class="tech__item">CSS,</li>
+                      <li class="tech__item">JavaScript</li>
+                    </ul>
+                  </div>
+                  <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#" target="_blank">
+                      <!--+svg('slide__ic-link', 'link') --><span class="slide__btn-text">Посмотреть сайт</span></a></div>
                 </div>
-                <div class="slide__tech">
-                  <ul class="tech__list">
-                    <li class="tech__item">HTML,</li>
-                    <li class="tech__item">CSS,</li>
-                    <li class="tech__item">JavaScript</li>
-                  </ul>
-                </div>
-                <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#" target="_blank">
-                    <svg class="slide__ic-link">
-                      <use xlink:href="/assets/images/svg/symbols.svg#link"></use>
-                    </svg><span class="slide__btn-text">Посмотреть сайт</span></a></div>
               </div>
             </div>
-            <div class="slide__images">
-              <div class="slide__images-wrapper"><img src="./assets/images/slide/work-1.png" alt="Работа 1"></div>
-            </div>
-            <div class="slide__controls">
-              <button class="control control__left" style="background-image: url('assets/images/slide/work-4.png');" id="previous">&lt;
-                <svg class="control__ic control__ic-up">
-                  <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                </svg>
-              </button>
-              <button class="control control__right" style="background-image: url('assets/images/slide/work-2.png');" id="next">&gt;
-                <svg class="control__ic control__ic-down">
-                  <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </li>
-        <li class="slide">
-          <div class="slide__container">
-            <div class="slide__text">
-              <div class="slide__text-wrapper">
-                <div class="slide__name">
-                  <div class="block-subtitle">Работа номер два</div>
+          </li>
+          <li class="slide">
+            <div class="slide__container">
+              <div class="slide__images">
+                <div class="slide__images-wrapper"><img src="./assets/images/slide/work-2.png" alt="Работа 2"></div>
+              </div>
+              <div class="slide__text">
+                <div class="slide__text-wrapper">
+                  <div class="slide__name">
+                    <div class="block-subtitle">Работа номер два</div>
+                  </div>
+                  <div class="slide__tech">
+                    <ul class="tech__list">
+                      <li class="tech__item">pug,</li>
+                      <li class="tech__item">sCSS,</li>
+                      <li class="tech__item">babel</li>
+                    </ul>
+                  </div>
+                  <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#" target="_blank">
+                      <!--+svg('slide__ic-link', 'link') --><span class="slide__btn-text">Посмотреть сайт</span></a></div>
                 </div>
-                <div class="slide__tech">
-                  <ul class="tech__list">
-                    <li class="tech__item">HTML,</li>
-                    <li class="tech__item">CSS,</li>
-                    <li class="tech__item">JavaScript</li>
-                  </ul>
-                </div>
-                <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#" target="_blank">
-                    <svg class="slide__ic-link">
-                      <use xlink:href="/assets/images/svg/symbols.svg#link"></use>
-                    </svg><span class="slide__btn-text">Посмотреть сайт</span></a></div>
               </div>
             </div>
-            <div class="slide__images">
-              <div class="slide__images-wrapper"><img src="./assets/images/slide/work-2.png" alt="Работа 2"></div>
-            </div>
-            <div class="slide__controls">
-              <button class="control control__left" style="background-image: url('assets/images/slide/work-1.png');" id="previous">&lt;
-                <svg class="control__ic control__ic-up">
-                  <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                </svg>
-              </button>
-              <button class="control control__right" style="background-image: url('assets/images/slide/work-3.png');" id="next">&gt;
-                <svg class="control__ic control__ic-down">
-                  <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </li>
-        <li class="slide">
-          <div class="slide__container">
-            <div class="slide__text">
-              <div class="slide__text-wrapper">
-                <div class="slide__name">
-                  <div class="block-subtitle">Работа номер три</div>
+          </li>
+          <li class="slide">
+            <div class="slide__container">
+              <div class="slide__images">
+                <div class="slide__images-wrapper"><img src="./assets/images/slide/work-3.png" alt="Работа 3"></div>
+              </div>
+              <div class="slide__text">
+                <div class="slide__text-wrapper">
+                  <div class="slide__name">
+                    <div class="block-subtitle">Работа номер три</div>
+                  </div>
+                  <div class="slide__tech">
+                    <ul class="tech__list">
+                      <li class="tech__item">nodejs,</li>
+                      <li class="tech__item">express,</li>
+                      <li class="tech__item">vuejs</li>
+                    </ul>
+                  </div>
+                  <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#" target="_blank">
+                      <!--+svg('slide__ic-link', 'link') --><span class="slide__btn-text">Посмотреть сайт</span></a></div>
                 </div>
-                <div class="slide__tech">
-                  <ul class="tech__list">
-                    <li class="tech__item">HTML,</li>
-                    <li class="tech__item">CSS,</li>
-                    <li class="tech__item">JavaScript</li>
-                  </ul>
-                </div>
-                <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#" target="_blank">
-                    <svg class="slide__ic-link">
-                      <use xlink:href="/assets/images/svg/symbols.svg#link"></use>
-                    </svg><span class="slide__btn-text">Посмотреть сайт</span></a></div>
               </div>
             </div>
-            <div class="slide__images">
-              <div class="slide__images-wrapper"><img src="./assets/images/slide/work-3.png" alt="Работа 3"></div>
-            </div>
-            <div class="slide__controls">
-              <button class="control control__left" style="background-image: url('assets/images/slide/work-2.png');" id="previous">&lt;
-                <svg class="control__ic control__ic-up">
-                  <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                </svg>
-              </button>
-              <button class="control control__right" style="background-image: url('assets/images/slide/work-4.png');" id="next">&gt;
-                <svg class="control__ic control__ic-down">
-                  <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </li>
-        <li class="slide">
-          <div class="slide__container">
-            <div class="slide__text">
-              <div class="slide__text-wrapper">
-                <div class="slide__name">
-                  <div class="block-subtitle">Работа номер четыре</div>
+          </li>
+          <li class="slide">
+            <div class="slide__container">
+              <div class="slide__images">
+                <div class="slide__images-wrapper"><img src="./assets/images/slide/work-4.png" alt="Работа 4"></div>
+              </div>
+              <div class="slide__text">
+                <div class="slide__text-wrapper">
+                  <div class="slide__name">
+                    <div class="block-subtitle">Работа номер четыре</div>
+                  </div>
+                  <div class="slide__tech">
+                    <ul class="tech__list">
+                      <li class="tech__item">pug,</li>
+                      <li class="tech__item">sCSS,</li>
+                      <li class="tech__item">babel</li>
+                    </ul>
+                  </div>
+                  <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#" target="_blank">
+                      <!--+svg('slide__ic-link', 'link') --><span class="slide__btn-text">Посмотреть сайт</span></a></div>
                 </div>
-                <div class="slide__tech">
-                  <ul class="tech__list">
-                    <li class="tech__item">HTML,</li>
-                    <li class="tech__item">CSS,</li>
-                    <li class="tech__item">JavaScript</li>
-                  </ul>
-                </div>
-                <div class="slide__btn-wrapper"><a class="slide__btn-link" href="#" target="_blank">
-                    <svg class="slide__ic-link">
-                      <use xlink:href="/assets/images/svg/symbols.svg#link"></use>
-                    </svg><span class="slide__btn-text">Посмотреть сайт</span></a></div>
               </div>
             </div>
-            <div class="slide__images">
-              <div class="slide__images-wrapper"><img src="./assets/images/slide/work-4.png" alt="Работа 4"></div>
-            </div>
-            <div class="slide__controls">
-              <button class="control control__left" style="background-image: url('assets/images/slide/work-3.png');" id="previous">&lt;
-                <svg class="control__ic control__ic-up">
-                  <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                </svg>
-              </button>
-              <button class="control control__right" style="background-image: url('assets/images/slide/work-1.png');" id="next">&gt;
-                <svg class="control__ic control__ic-down">
-                  <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+        <div class="slide__controls">
+          <button class="control control__left" id="previous">&lt;
+            <svg class="control__ic control__ic-up">
+              <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
+            </svg>
+          </button>
+          <button class="control control__right" id="next">&gt;
+            <svg class="control__ic control__ic-down">
+              <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="feedback">
+        <div class="block-title" style="background-image: url('assets/images/decor/about_header.png');">Что обо мне <br>говорят</div>
+        <div class="reviews">
+          <ul class="reviews__list">
+            <li class="reviews__item">
+              <p class="reviews__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
+              <div class="reviews__content">
+                <div class="reviews__img"><img src="" alt=""></div>
+                <div class="reviews__name">
+                  <p class="reviews__name-fio">Ковальчук Дмитрий</p>
+                  <p class="reviews__name-position">основатель Loftschool</p>
+                </div>
+              </div>
+            </li>
+            <li class="reviews__item">
+              <p class="reviews__text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</p>
+              <div class="reviews__content">
+                <div class="reviews__img"><img src="" alt=""></div>
+                <div class="reviews__name">
+                  <p class="reviews__name-fio">Сабанцев Владимир</p>
+                  <p class="reviews__name-position">преподаватель</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </main>
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__left">
+          <div class="footer__about">Этот сайт я сделал в рамках обучения в Школе <span class="footer__about-divider">онлайн образования LoftSchool.</span></div>
+          <div class="footer__about-user-name">© Дмитрий Чех <span class="footer__about-divider">Создано с любовью в LoftSchool | 2017</span></div>
+        </div>
+        <div class="footer__center">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="/my-works.html">Мои работы</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="/about.html">Обо мне</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="/blog.html">Блог</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="/index.html">Авторизация</a></li>
+          </ul>
+          <ul class="social">
+            <li class="social-item"><a class="social-item__link" href="https://vk.com/dm_chekh" target="_blank">
+                <svg class="social-item__ic social-item__ic-vk">
+                  <use xlink:href="/assets/images/svg/symbols.svg#vk"></use>
+                </svg><span class="hidden">Vk</span></a></li>
+            <li class="social-item"><a class="social-item__link" href="https://github.com/d1m4a" target="_blank">
+                <svg class="social-item__ic social-item__ic-github">
+                  <use xlink:href="/assets/images/svg/symbols.svg#github"></use>
+                </svg><span class="hidden">Github</span></a></li>
+            <li class="social-item"><a class="social-item__link" href="https://www.linkedin.com/in/дмитрий-чех-3aa13490/" target="_blank">
+                <svg class="social-item__ic social-item__ic-in">
+                  <use xlink:href="/assets/images/svg/symbols.svg#in"></use>
+                </svg><span class="hidden">Linkedin</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__right">
+          <ul class="contacts__list">
+            <li class="contacts__item"><a class="contacts__link" href="skype:dmitry_peleev?chat"><span class="contacts__link-text">dmitry_peleev</span></a></li>
+            <li class="contacts__item"><a class="contacts__link" href="mailto:dmitry.peleev@gmail.com"><span class="contacts__link-text">dmitry.peleev@gmail.com</span></a></li>
+            <li class="contacts__item"><a class="contacts__link" href="tel:89620717250"><span class="contacts__link-text">+7 962 071 72 50</span></a></li>
+            <li class="contacts__item"><a class="contacts__link" href="https://www.google.ru/maps/@56.0150407,92.8587531,14.25z"><span class="contacts__link-text">г. Красноярск</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="menu__container">
+      <ul class="menu__list">
+        <li class="menu__item"><a class="nav-menu__link" href="/my-works.html">Мои работы</a></li>
+        <li class="menu__item"><a class="nav-menu__link" href="/blog.html">Блог</a></li>
+        <li class="menu__item"><a class="nav-menu__link" href="/about.html">Обо мне</a></li>
+        <li class="menu__item"><a class="nav-menu__link" href="/index.html">Авторизация</a></li>
+      </ul>
+    </div>
     <script src="/assets/scripts/bundle.js" defer></script>
   </body>
 </html>

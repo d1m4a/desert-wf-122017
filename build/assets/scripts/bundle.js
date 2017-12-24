@@ -69,7 +69,9 @@
 
 const slider = __webpack_require__(1);
 const map = __webpack_require__(2);
-/* const $ = require('jquery');*/
+const preloader = __webpack_require__(3);
+const gumburger = __webpack_require__(4);
+//const $ = require('jquery');
 
 
 slider(); /* иницииализируем слайдер */
@@ -77,6 +79,12 @@ console.log('slider подключен');
 
 map(); /* инициализируем стилизацию карты */
 console.log('карта подключена');
+
+preloader(); /* инициализация прелоадера */
+console.log('прелоадер активирован');
+
+gumburger(); /* инициализация gumburger */
+console.log('gumburger активирован');
 
 /***/ }),
 /* 1 */
@@ -233,6 +241,48 @@ function initMap() {
 }
 //window.initMap = initMap;
 module.exports = initMap;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+
+    document.body.onload = function(){
+
+        setTimeout(function(){
+            var preloader = document.getElementById("preloader");
+                if (!preloader.classList.contains('done')){
+                    preloader.classList.add('done');
+                }
+        }, 1000);
+    };
+
+
+module.exports = preloader;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+(function() {
+
+    var toggles = document.querySelectorAll(".menu__toggle");
+   
+    for (var i = toggles.length - 1; i >= 0; i--) {
+      var toggle = toggles[i];
+      toggleHandler(toggle);
+    };
+   
+    function toggleHandler(toggle) {
+      toggle.addEventListener( "click", function(e) {
+        e.preventDefault();
+        (this.classList.contains("active") === true) ? this.classList.remove("active") : this.classList.add("active");
+      });
+    }
+   
+  })();
+
+module.exports = gumburger;
 
 /***/ })
 /******/ ]);

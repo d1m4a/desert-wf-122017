@@ -9,8 +9,8 @@ mixin header(bg)
                         a(href="#").socials__link
                             +svg(`socials__ic socials__ic-${item}`, `${item}`)
         .hero__menu
-            a(href="#menu").menu
-                span.menu__gamburger
+            button.menu__toggle.menu__toggle-htx
+                span Меню
         .hero__title
             .section-title
                 img(src=`assets/images/${bg}_header.svg`, alt=`${bg}`).section-title__pic

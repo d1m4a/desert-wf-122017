@@ -1,6 +1,9 @@
-ul#slides
+ul#slides.slides
     li.slide.showing
         .slide__container
+            .slide__images
+                .slide__images-wrapper
+                    img(src="./assets/images/slide/work-1.png", alt="Работа 1")
             .slide__text
                 .slide__text-wrapper
                     .slide__name
@@ -11,81 +14,62 @@ ul#slides
                                 li.tech__item= tech
                     .slide__btn-wrapper
                         a(href="#" target="_blank").slide__btn-link
-                            +svg('slide__ic-link', 'link') 
+                            //+svg('slide__ic-link', 'link') 
                             span.slide__btn-text Посмотреть сайт
-            .slide__images
-                .slide__images-wrapper
-                    img(src="./assets/images/slide/work-1.png", alt="Работа 1")
-            .slide__controls
-                button.control.control__left(style="background-image: url('assets/images/slide/work-4.png')")#previous &lt;
-                    +svg('control__ic control__ic-up', 'arrow_down')
-                button.control.control__right(style="background-image: url('assets/images/slide/work-2.png')")#next &gt;
-                    +svg('control__ic control__ic-down', 'arrow_down')
     li.slide
         .slide__container
+            .slide__images
+                .slide__images-wrapper
+                    img(src="./assets/images/slide/work-2.png", alt="Работа 2")
             .slide__text
                 .slide__text-wrapper
                     .slide__name
                         .block-subtitle Работа номер два
                     .slide__tech
                         ul.tech__list
-                            each tech in ['HTML,','CSS,','JavaScript']
+                            each tech in ['pug,','sCSS,','babel']
                                 li.tech__item= tech
                     .slide__btn-wrapper
                         a(href="#" target="_blank").slide__btn-link
-                            +svg('slide__ic-link', 'link') 
+                            //+svg('slide__ic-link', 'link') 
                             span.slide__btn-text Посмотреть сайт
-            .slide__images
-                .slide__images-wrapper
-                    img(src="./assets/images/slide/work-2.png", alt="Работа 2")
-            .slide__controls
-                button.control.control__left(style="background-image: url('assets/images/slide/work-1.png')")#previous &lt;
-                    +svg('control__ic control__ic-up', 'arrow_down')
-                button.control.control__right(style="background-image: url('assets/images/slide/work-3.png')")#next &gt;
-                    +svg('control__ic control__ic-down', 'arrow_down')
     li.slide
         .slide__container
+            .slide__images
+                .slide__images-wrapper
+                    img(src="./assets/images/slide/work-3.png", alt="Работа 3")
             .slide__text
                 .slide__text-wrapper
                     .slide__name
                         .block-subtitle Работа номер три
                     .slide__tech
                         ul.tech__list
-                            each tech in ['HTML,','CSS,','JavaScript']
+                            each tech in ['nodejs,','express,','vuejs']
                                 li.tech__item= tech
                     .slide__btn-wrapper
                         a(href="#" target="_blank").slide__btn-link
-                            +svg('slide__ic-link', 'link') 
+                            //+svg('slide__ic-link', 'link') 
                             span.slide__btn-text Посмотреть сайт
-            .slide__images
-                .slide__images-wrapper
-                    img(src="./assets/images/slide/work-3.png", alt="Работа 3")
-            .slide__controls
-                button.control.control__left(style="background-image: url('assets/images/slide/work-2.png')")#previous &lt;
-                    +svg('control__ic control__ic-up', 'arrow_down')
-                button.control.control__right(style="background-image: url('assets/images/slide/work-4.png')")#next &gt;
-                    +svg('control__ic control__ic-down', 'arrow_down')
     li.slide
         .slide__container
+            .slide__images
+                .slide__images-wrapper
+                    img(src="./assets/images/slide/work-4.png", alt="Работа 4")
             .slide__text
                 .slide__text-wrapper
                     .slide__name
                         .block-subtitle Работа номер четыре
                     .slide__tech
                         ul.tech__list
-                            each tech in ['HTML,','CSS,','JavaScript']
+                            each tech in ['pug,','sCSS,','babel']
                                 li.tech__item= tech
                     .slide__btn-wrapper
                         a(href="#" target="_blank").slide__btn-link
-                            +svg('slide__ic-link', 'link') 
+                            //+svg('slide__ic-link', 'link') 
                             span.slide__btn-text Посмотреть сайт
-            .slide__images
-                .slide__images-wrapper
-                    img(src="./assets/images/slide/work-4.png", alt="Работа 4")
-            .slide__controls
-                button.control.control__left(style="background-image: url('assets/images/slide/work-3.png')")#previous &lt;
-                    +svg('control__ic control__ic-up', 'arrow_down')
-                button.control.control__right(style="background-image: url('assets/images/slide/work-1.png')")#next &gt;
-                    +svg('control__ic control__ic-down', 'arrow_down')
-
+.slide__controls
+    button.control.control__left#previous &lt;
+        +svg('control__ic control__ic-up', 'arrow_down')
+    button.control.control__right#next &gt;
+        +svg('control__ic control__ic-down', 'arrow_down')
 
