@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="/assets/styles/app.min.css">
   </head>
   <body>
-    <div class="preloader"></div>
+    <div class="preloader" id="preloader">
+      <div id="spinner"></div>
+    </div>
     <main class="main">
       <section class="welcome">
+        <div class="welcome__bg"></div>
         <div class="welcome__topbar clearfix"><a class="welcome__auth-button" id="js-auth-btn" href="#auth">Авторизоваться</a></div>
         <div class="welcome__wrapper author-card__container">
           <div class="author-card__cards">

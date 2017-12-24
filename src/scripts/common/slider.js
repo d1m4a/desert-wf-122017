@@ -3,22 +3,26 @@ const next = document.getElementById('next'); /* кнопочка следующ
 const previous = document.getElementById('previous'); /* кнопочка предыдущий слайд */
 const controls = document.querySelectorAll('.controls'); /* кнопочки контроля за листанием слайдов */
 
+console.log();
+
 let currentSlide = 0;
 
 /* осуществляет переход к слайду номер n (начиная с 0) */
 function goToSlide(n){
-    slides[currentSlide].className = 'slide'; /* берестя n-ный слайд с классом slide */
+    slides[currentSlide].className = 'slide'; /* беретcя n-ный слайд с классом slide */
     currentSlide = (n+slides.length)%slides.length; /* остаток от деления */
     slides[currentSlide].className = 'slide showing'; /* присваеваем этому слайду класс Showing т.е. показываем его */
 }
 
-/* навешиваем обработкчики соыти на элементы next и previous */
+/* навешиваем обработкчики событий на элементы next и previous */
 function setupListners(){
     next.onclick = function(){
         goToSlide(currentSlide+1);
+        console.log('клик след');
     }
     previous.onclick = function(){
         goToSlide(currentSlide-1);
+        console.log('клик пред');
     }
 }
 
@@ -31,7 +35,7 @@ function showButtons(){
 
 /* инициализация слайдера */
 function sliderInit(){
-    if(slide.length !== 0) { /* на странице есть нужный html код */
+    if(slides.length !== 0) { /* на странице есть нужный html код */
         setupListners();
         showButtons();
     }

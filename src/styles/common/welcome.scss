@@ -2,10 +2,6 @@
 
 .welcome{
     color: #fff;
-    background-image: url(../images/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -14,8 +10,17 @@
     align-items: center;
     justify-content: center;
 
+    &__bg{
+        background: url(../images/sand.jpg) bottom left repeat-x;
+        width: 6112px;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        animation: bg 60s linear infinite;
+    }
+
     &__topbar{
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 100%;
@@ -311,5 +316,16 @@
     .welcome__footer-author{
         display: block;
         text-align: center;
+    }
+}
+
+// animation bg
+
+@keyframes bg {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-3056px);
     }
 }
