@@ -8,13 +8,14 @@
         overflow: hidden;
         height: 100vh;
         min-height: 650px;
-        transform: translateX(100%);
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
+        transform: translateX(100%); // overlay сдвинут вправо на всюе его ширину
         display: flex;
         align-items: center;
         justify-content: center;
+
+        &--open{
+            transform: translateX(0); // overlay показан
+        }
 
         &:before, 
         &:after {
@@ -25,9 +26,7 @@
             position: absolute;
             top: 0;
             z-index: 100;
-            transition: -webkit-transform 0.3s ease-in;
             transition: transform 0.3s ease-in;
-            transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
             opacity: 0;
         }
         &:before {
@@ -54,10 +53,62 @@
         margin: 0;
         padding: 0;
         text-align: center;
+        z-index: 101;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, -100%, 0);
+        transition: .5s .5s ease-in-out;
+
+        &--open{
+            opacity: 1;
+            visibility: visible;
+            transform: translate3d(0, 0, 0);
+        }
     }
     &__item {
-        opacity: 0;
+        margin-bottom: 20px;
         position: relative;
-        z-index: 101;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__link{
+        color: #fff;
+        padding: 0 40px;
+        font-family: 'sansus', sans-serif;
+        text-transform: uppercase;
+        font-size: 2.1875rem;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+
+        &:after,
+        &:before{
+            content: '';
+            display: block;
+            width: 21px;
+            height: 10px;
+            position: absolute;
+            opacity: 0;
+            transition: .3s ease-in-out;
+        }
+
+        &:before{
+            background-image: url(../images/decor/elip_left.png);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        &:after{
+            background-image: url(../images/decor/elip_right.png);
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+        &:hover:before,
+        &:hover:after{
+            opacity: 1;
+        }
     }
 }
