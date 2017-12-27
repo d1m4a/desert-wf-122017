@@ -71,8 +71,11 @@ const slider = __webpack_require__(1);
 const map = __webpack_require__(2);
 const preloader = __webpack_require__(3);
 const gumburger = __webpack_require__(4);
+const auth = __webpack_require__(5);
 //const $ = require('jquery');
 
+auth(); /* инициализируем скрипта авторизации */
+console.log('авторизация подключена');
 
 slider(); /* иницииализируем слайдер */
 console.log('slider подключен');
@@ -294,6 +297,26 @@ module.exports = preloader;
   })();
 
 module.exports = gumburger;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+    
+    const btnAuth = document.getElementById("authBtn");
+    const containerAuth = document.querySelector('.author-card__cards');
+
+    console.log(document.getElementById("authBtn"));
+
+    btnAuth.addEventListener( "click", function(e) {
+        e.preventDefault();
+        console.log('клик');
+
+        containerAuth.classList.add('author-card__cards--open'); // перевернули на другую сторону
+        this.style.display = 'none'; // скрыли кнопку
+    });
+
+module.exports = auth;
 
 /***/ })
 /******/ ]);
