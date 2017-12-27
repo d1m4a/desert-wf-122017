@@ -1,3 +1,5 @@
+include ../_mixins/svg
+
 ul#slides.slides
     li.slide.showing
         .slide__container
@@ -67,9 +69,8 @@ ul#slides.slides
                         a(href="#" target="_blank").slide__btn-link
                             //+svg('slide__ic-link', 'link') 
                             span.slide__btn-text Посмотреть сайт
-.slide__controls
-    button.control.control__left#previous &lt;
-        +svg('control__ic control__ic-up', 'arrow_down')
-    button.control.control__right#next &gt;
-        +svg('control__ic control__ic-down', 'arrow_down')
+a(href="#").slide__control--link.slide__control--left#previous
+    +svg('slide__control-ic slide__control-ic--left', 'arrow_down')
+a(href="#").slide__control--link.slide__control--right#next
+    +svg('slide__control-ic slide__control-ic--right', 'arrow_down')
 

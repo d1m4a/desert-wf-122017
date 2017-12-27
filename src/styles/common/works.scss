@@ -10,4 +10,19 @@
 
 .feedback{
     background-color: $slide-control-bg;
+    text-align: center;
+}
+
+.reviews{
+    text-align: left;
+
+
+    &__list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    &__item{
+        display: inline-block;
+    }
 }
