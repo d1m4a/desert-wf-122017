@@ -8,9 +8,9 @@ block content
     section.welcome
         .welcome__bg
         .welcome__topbar.clearfix
-            a.welcome__auth-button#authBtn(href='#') Авторизоваться
+            button(type="button").welcome__auth-button#auth-btn Авторизоваться
         .welcome__wrapper.author-card__container
-            .author-card__cards
+            .author-card__cards#flip
                 .author-card.author-card__front
                     .author-card__img-wrapper
                         img.author-card__img(src='assets/images/foto.jpg' alt='Чех Дмитрий')
@@ -46,23 +46,26 @@ block content
                                         input(type='password' name='password' required='required' placeholder='Пароль').auth__input
                                 .auth-group
                                     .auth-card__human
-                                        label.auth-card__label-checkbox Я человек
+                                        label.auth-card__label-checkbox
                                             input(type='checkbox' name='ishuman').auth-card__checkbox
                                             span.auth-card__check--styled
                                                 +svg('auth-card__ic-check', 'check')
+                                            span.auth-card__check--name Я человек
                                     .auth-card__check-group
                                             .auth-card__question Вы точно не робот?
                                             label.auth-card__label-radio
                                                 input(type='radio' name='robot' value='yes').auth-card__radio
-                                            span.auth-card__label-radio-text Да
+                                                span.auth-card__label-radio--btn
+                                                span.auth-card__label-radio-text Да
                                             label.auth-card__label-radio
                                                 input(type='radio' name='robot' value='no').auth-card__radio
-                                            span.auth-card__label-radio-text Не уверен
+                                                span.auth-card__label-radio--btn
+                                                span.auth-card__label-radio-text Не уверен
                             .auth-card__footer
                                 .auth-card__nav
                                     ul.auth-card__list
                                         li.auth-card__item
-                                            a.auth-card__link(href='#') На главную
+                                            a(href='#')#btn-auth-back.auth-card__link На главную
                                         li.auth-card__item
                                             button.auth-card__link(type='submit') Войти
 

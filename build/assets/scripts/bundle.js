@@ -67,15 +67,15 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//import $ from 'jquery';
+
 const slider = __webpack_require__(1);
 const map = __webpack_require__(2);
 const preloader = __webpack_require__(3);
-const gumburger = __webpack_require__(4);
-const auth = __webpack_require__(5);
+const hamburger = __webpack_require__(4);
+const authorize = __webpack_require__(5);
 //const $ = require('jquery');
 
-auth(); /* инициализируем скрипта авторизации */
-console.log('авторизация подключена');
 
 slider(); /* иницииализируем слайдер */
 console.log('slider подключен');
@@ -86,8 +86,12 @@ console.log('карта подключена');
 preloader(); /* инициализация прелоадера */
 console.log('прелоадер активирован');
 
-gumburger(); /* инициализация gumburger */
-console.log('gumburger активирован');
+hamburger(); /* инициализация hamburger */
+console.log('hamburger активирован');
+
+authorize(); /* инициализируем скрипта авторизации */
+console.log('авторизация подключена');
+
 
 /***/ }),
 /* 1 */
@@ -267,7 +271,6 @@ module.exports = preloader;
 /* 4 */
 /***/ (function(module, exports) {
 
-(function() {
 
     const toggles = document.querySelectorAll(".menu__toggle");
     const container = document.querySelector('.menu__container');
@@ -293,30 +296,30 @@ module.exports = preloader;
         }
       });
     }
-   
-  })();
 
-module.exports = gumburger;
+
+module.exports = hamburger;
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-    
-    const btnAuth = document.getElementById("authBtn");
-    const containerAuth = document.querySelector('.author-card__cards');
+function auth () {
 
-    console.log(document.getElementById("authBtn"));
-
+    const btnAuth = document.getElementById('auth-btn');
+    const containerFlip = document.getElementById('flip');
+    console.log(btnAuth);
+    console.log(containerFlip);
     btnAuth.addEventListener( "click", function(e) {
         e.preventDefault();
-        console.log('клик');
-
-        containerAuth.classList.add('author-card__cards--open'); // перевернули на другую сторону
-        this.style.display = 'none'; // скрыли кнопку
+        containerFlip.classList.add('author-card__cards--open');
+        this.classList.add('hidden');
     });
+}
 
-module.exports = auth;
+auth();
+
+module.exports = authorize;
 
 /***/ })
 /******/ ]);

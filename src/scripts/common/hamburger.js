@@ -1,4 +1,3 @@
-(function() {
 
     const toggles = document.querySelectorAll(".menu__toggle");
     const container = document.querySelector('.menu__container');
@@ -24,7 +23,6 @@
         }
       });
     }
-   
-  })();
 
-module.exports = gumburger;
+
+module.exports = hamburger;

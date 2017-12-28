@@ -12,6 +12,11 @@ const config = {
         /*new UglifyJSPlugin({
             sourceMap: true
         })*/
+        /*new webpack.ProvidePlugin({
+            $: "jquery/dist/jquery.min.js",
+            jQuery: 'jquery'
+            //$: "jquery"
+        })*/
     ]
 };
 

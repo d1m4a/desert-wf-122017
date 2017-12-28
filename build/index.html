@@ -19,9 +19,11 @@
     <main class="main">
       <section class="welcome">
         <div class="welcome__bg"></div>
-        <div class="welcome__topbar clearfix"><a class="welcome__auth-button" id="authBtn" href="#">Авторизоваться</a></div>
+        <div class="welcome__topbar clearfix">
+          <button class="welcome__auth-button" type="button" id="auth-btn">Авторизоваться</button>
+        </div>
         <div class="welcome__wrapper author-card__container">
-          <div class="author-card__cards">
+          <div class="author-card__cards" id="flip">
             <div class="author-card author-card__front">
               <div class="author-card__img-wrapper"><img class="author-card__img" src="assets/images/foto.jpg" alt="Чех Дмитрий"></div>
               <div class="author-card__content">
@@ -79,28 +81,28 @@
                     </div>
                     <div class="auth-group">
                       <div class="auth-card__human">
-                        <label class="auth-card__label-checkbox">Я человек
+                        <label class="auth-card__label-checkbox">
                           <input class="auth-card__checkbox" type="checkbox" name="ishuman"><span class="auth-card__check--styled">
                             <svg class="auth-card__ic-check">
                               <use xlink:href="/assets/images/svg/symbols.svg#check"></use>
-                            </svg></span>
+                            </svg></span><span class="auth-card__check--name">Я человек</span>
                         </label>
                       </div>
                       <div class="auth-card__check-group">
                         <div class="auth-card__question">Вы точно не робот?</div>
                         <label class="auth-card__label-radio">
-                          <input class="auth-card__radio" type="radio" name="robot" value="yes">
-                        </label><span class="auth-card__label-radio-text">Да</span>
+                          <input class="auth-card__radio" type="radio" name="robot" value="yes"><span class="auth-card__label-radio--btn"></span><span class="auth-card__label-radio-text">Да</span>
+                        </label>
                         <label class="auth-card__label-radio">
-                          <input class="auth-card__radio" type="radio" name="robot" value="no">
-                        </label><span class="auth-card__label-radio-text">Не уверен</span>
+                          <input class="auth-card__radio" type="radio" name="robot" value="no"><span class="auth-card__label-radio--btn"></span><span class="auth-card__label-radio-text">Не уверен</span>
+                        </label>
                       </div>
                     </div>
                   </div>
                   <div class="auth-card__footer">
                     <div class="auth-card__nav">
                       <ul class="auth-card__list">
-                        <li class="auth-card__item"><a class="auth-card__link" href="#">На главную</a></li>
+                        <li class="auth-card__item"><a class="auth-card__link" href="#" id="btn-auth-back">На главную</a></li>
                         <li class="auth-card__item">
                           <button class="auth-card__link" type="submit">Войти</button>
                         </li>
@@ -116,5 +118,23 @@
       </section>
     </main>
     <script src="/assets/scripts/bundle.js" defer></script>
+    <script>
+      const btnAuth = document.getElementById('auth-btn');
+      const containerFlip = document.getElementById('flip');
+      const btnAuthBack = document.getElementById('btn-auth-back');
+      
+      console.log(btnAuthBack);
+      
+      btnAuth.addEventListener( "click", function(e) {
+          e.preventDefault();
+          containerFlip.classList.add('author-card__cards--open');
+          this.classList.add('hidden');
+      });
+      btnAuthBack.addEventListener( "click", function(e) {
+          e.preventDefault();
+          containerFlip.classList.remove('author-card__cards--open');
+          btnAuth.classList.remove('hidden');
+      });
+    </script>
   </body>
 </html>
