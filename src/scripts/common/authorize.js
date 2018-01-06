@@ -1,16 +1,17 @@
-function auth () {
+module.exports = authorize = () => {
 
     const btnAuth = document.getElementById('auth-btn');
     const containerFlip = document.getElementById('flip');
-    console.log(btnAuth);
-    console.log(containerFlip);
+    const btnAuthBack = document.getElementById('btn-auth-back');
+
     btnAuth.addEventListener( "click", function(e) {
         e.preventDefault();
         containerFlip.classList.add('author-card__cards--open');
         this.classList.add('hidden');
     });
-}
-
-auth();
-
-module.exports = authorize;
+    btnAuthBack.addEventListener( "click", function(e) {
+        e.preventDefault();
+        containerFlip.classList.remove('author-card__cards--open');
+        btnAuth.classList.remove('hidden');
+    });
+};

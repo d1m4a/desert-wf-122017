@@ -67,15 +67,12 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-//import $ from 'jquery';
 
 const slider = __webpack_require__(1);
 const map = __webpack_require__(2);
 const preloader = __webpack_require__(3);
 const hamburger = __webpack_require__(4);
 const authorize = __webpack_require__(5);
-//const $ = require('jquery');
-
 
 slider(); /* иницииализируем слайдер */
 console.log('slider подключен');
@@ -93,167 +90,178 @@ authorize(); /* инициализируем скрипта авторизаци
 console.log('авторизация подключена');
 
 
+
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
-const slides = document.querySelectorAll('#slides .slide'); /* кол-во слайдов */
-const next = document.getElementById('next'); /* кнопочка следующий слайд */
-const previous = document.getElementById('previous'); /* кнопочка предыдущий слайд */
-const controls = document.querySelectorAll('.controls'); /* кнопочки контроля за листанием слайдов */
+module.exports = slider = () => {
 
-console.log();
+    const slides = document.querySelectorAll('#slides .slide'); /* кол-во слайдов */
+    const next = document.getElementById('next'); /* кнопочка следующий слайд */
+    const previous = document.getElementById('previous'); /* кнопочка предыдущий слайд */
+    const controls = document.querySelectorAll('.controls'); /* кнопочки контроля за листанием слайдов */
 
-let currentSlide = 0;
+    console.log();
 
-/* осуществляет переход к слайду номер n (начиная с 0) */
-function goToSlide(n){
-    slides[currentSlide].className = 'slide'; /* беретcя n-ный слайд с классом slide */
-    currentSlide = (n+slides.length)%slides.length; /* остаток от деления */
-    slides[currentSlide].className = 'slide showing'; /* присваеваем этому слайду класс Showing т.е. показываем его */
-}
+    let currentSlide = 0;
 
-/* навешиваем обработкчики событий на элементы next и previous */
-function setupListners(){
-    next.onclick = function(){
-        goToSlide(currentSlide+1);
-        console.log('клик след');
+    /* осуществляет переход к слайду номер n (начиная с 0) */
+    function goToSlide(n){
+        slides[currentSlide].className = 'slide'; /* беретcя n-ный слайд с классом slide */
+        currentSlide = (n+slides.length)%slides.length; /* остаток от деления */
+        slides[currentSlide].className = 'slide showing'; /* присваеваем этому слайду класс Showing т.е. показываем его */
     }
-    previous.onclick = function(){
-        goToSlide(currentSlide-1);
-        console.log('клик пред');
-    }
-}
 
-/* показываем кнопочки для навигации (в случае если js не загрузится клиент не увидит кнопок, а только картинки) */
-function showButtons(){
-    for(var i=0; i<controls.length; i++){
-        controls[i].style.display = 'inline-block';
+    /* навешиваем обработкчики событий на элементы next и previous */
+    function setupListners(){
+        next.onclick = function(){
+            goToSlide(currentSlide+1);
+            console.log('клик след');
+        }
+        previous.onclick = function(){
+            goToSlide(currentSlide-1);
+            console.log('клик пред');
+        }
     }
-}
 
-/* инициализация слайдера */
-function sliderInit(){
-    if(slides.length !== 0) { /* на странице есть нужный html код */
-        setupListners();
-        showButtons();
+    /* показываем кнопочки для навигации (в случае если js не загрузится клиент не увидит кнопок, а только картинки) */
+    function showButtons(){
+        for(var i=0; i<controls.length; i++){
+            controls[i].style.display = 'inline-block';
+        }
     }
-}
 
-module.exports = sliderInit;
+    /* инициализация слайдера */
+    function sliderInit(){
+        if(slides.length !== 0) { /* на странице есть нужный html код */
+            setupListners();
+            showButtons();
+        }
+    }
+};
+//module.exports = sliderInit;
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
+module.exports = initMap = () => {
 
-function initMap() {
+    function initMap() {
 
-	var map = new google.maps.Map(document.getElementById('map'), {
+        GoogleMapsLoader.KEY = "AIzaSyDhQNTgjvezECxXDnOfqiL3S36LVJp01z4";
 
-		center: {lat: 56.026876, lng: 92.865734},
+        GoogleMapsLoader.load(function(google) {
 
-		zoom: 12,
+            var maps = document.getElementById('map');
 
-		styles: [
-            {
-                "featureType": "administrative",
-                "elementType": "labels.text.fill",
-                "stylers": [
+            var map = new google.maps.Map(maps, {
+                zoom: 12,
+                center: {lat: 56.026876, lng: 92.865734},
+                mapTypeControl: false,
+                disableDefaultUI: true,
+                mapTypeId: "satellite",
+                styles: [
                     {
-                        "color": "#444444"
-                    }
-                ]
-            },
-            {
-                "featureType": "administrative.neighborhood",
-                "elementType": "labels.icon",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "color": "#f2f2f2"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "saturation": -100
+                        "featureType": "administrative",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#444444"
+                            }
+                        ]
                     },
                     {
-                        "lightness": 45
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.arterial",
-                "elementType": "labels.icon",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "transit",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "color": "#ff9900"
+                        "featureType": "administrative.neighborhood",
+                        "elementType": "labels.icon",
+                        "stylers": [
+                            {
+                                "visibility": "on"
+                            }
+                        ]
                     },
                     {
-                        "visibility": "on"
+                        "featureType": "landscape",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#f2f2f2"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "saturation": -100
+                            },
+                            {
+                                "lightness": 45
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "simplified"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "labels.icon",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#ff9900"
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
                     }
                 ]
-            }
-        ]
-	});
-}
-//window.initMap = initMap;
-module.exports = initMap;
+            });
+        });
+    }
+};
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-
+module.exports = preloader = () => {
     document.body.onload = function(){
 
         setTimeout(function(){
@@ -263,63 +271,61 @@ module.exports = initMap;
                 }
         }, 1000);
     };
-
-
-module.exports = preloader;
+};
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
+module.exports = hamburger = () => {
 
-    const toggles = document.querySelectorAll(".menu__toggle");
-    const container = document.querySelector('.menu__container');
-    const menu = document.querySelector('.menu__list');
+  const toggles = document.querySelectorAll(".menu__toggle");
+  const container = document.querySelector(".menu__container");
+  const menu = document.querySelector(".menu__list");
 
-   
-    for (var i = toggles.length - 1; i >= 0; i--) {
-      var toggle = toggles[i];
-      toggleHandler(toggle);
-    };
-   
-    function toggleHandler(toggle) {
-      toggle.addEventListener( "click", function(e) {
-        e.preventDefault();
-        if(this.classList.contains("active") === true) { 
-          this.classList.remove("active")
-          container.classList.remove('menu__container--open')
-          menu.classList.remove('menu__list--open')
-        } else { 
-          this.classList.add("active");
-          container.classList.add('menu__container--open')
-          menu.classList.add('menu__list--open')
-        }
-      });
-    }
+  for (var i = toggles.length - 1; i >= 0; i--) {
+    var toggle = toggles[i];
+    toggleHandler(toggle);
+  }
+  
+  function toggleHandler(toggle) {
+    toggle.addEventListener("click", function(e) {
+      e.preventDefault();
+      if (this.classList.contains("active") === true) {
+        this.classList.remove("active");
+        container.classList.remove("menu__container--open");
+        menu.classList.remove("menu__list--open");
+      } else {
+        this.classList.add("active");
+        container.classList.add("menu__container--open");
+        menu.classList.add("menu__list--open");
+      }
+    });
+  }
 
-
-module.exports = hamburger;
+};
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-function auth () {
+module.exports = authorize = () => {
 
     const btnAuth = document.getElementById('auth-btn');
     const containerFlip = document.getElementById('flip');
-    console.log(btnAuth);
-    console.log(containerFlip);
+    const btnAuthBack = document.getElementById('btn-auth-back');
+
     btnAuth.addEventListener( "click", function(e) {
         e.preventDefault();
         containerFlip.classList.add('author-card__cards--open');
         this.classList.add('hidden');
     });
-}
-
-auth();
-
-module.exports = authorize;
+    btnAuthBack.addEventListener( "click", function(e) {
+        e.preventDefault();
+        containerFlip.classList.remove('author-card__cards--open');
+        btnAuth.classList.remove('hidden');
+    });
+};
 
 /***/ })
 /******/ ]);

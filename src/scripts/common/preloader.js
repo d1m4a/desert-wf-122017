@@ -1,4 +1,4 @@
-
+module.exports = preloader = () => {
     document.body.onload = function(){
 
         setTimeout(function(){
@@ -8,6 +8,4 @@
                 }
         }, 1000);
     };
-
-
-module.exports = preloader;
+};

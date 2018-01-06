@@ -1,12 +1,9 @@
-//import $ from 'jquery';
 
 const slider = require('./common/slider');
 const map = require('./common/initMap');
 const preloader = require('./common/preloader');
 const hamburger = require('./common/hamburger');
 const authorize = require('./common/authorize');
-//const $ = require('jquery');
-
 
 slider(); /* иницииализируем слайдер */
 console.log('slider подключен');
@@ -22,3 +19,5 @@ console.log('hamburger активирован');
 
 authorize(); /* инициализируем скрипта авторизации */
 console.log('авторизация подключена');
+
+
