@@ -6,15 +6,15 @@
 	height: 140px;
 
     &__wrapper {
-        @extend %clearfix;
         text-align: left;
         padding-top: 20px;
+        display: flex;
+        padding-bottom: 20px;
     }
 
 
     &__left, &__right, &__center {
-        width: 31%;
-        float: left;
+        width: 32%;
         padding-left: 25px;
 
         @include  laptops{
@@ -103,7 +103,7 @@
             }
         }
         .contacts__link-text {
-            line-height: 2rem;
+            line-height: 1.5rem;
 
             @include  laptops{
                 line-height: 1.5rem;
