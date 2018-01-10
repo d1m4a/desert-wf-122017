@@ -11,6 +11,24 @@
 .feedback{
     background-color: $slide-control-bg;
     text-align: center;
+    background: url(../images/san.jpg) no-repeat bottom center;
+    background-size: cover;
+
+    &__wrapper {
+        width: 380px;
+        margin: 0 auto;
+        padding-top: 30px;
+        background: wheat;
+        border-radius: 10px;
+    }
+
+    &__title {
+        margin-bottom: 35px;
+
+        & .block-subtitle {
+            padding: 0 25px;
+        }
+    }
 }
 
 .reviews{
@@ -85,4 +103,7 @@
             font-family: 'robotoregular';
         }
     }
+}
+.feedback{
+    
 }

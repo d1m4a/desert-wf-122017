@@ -42,3 +42,20 @@ block content
                         .reviews__name
                             p.reviews__name-fio Сабанцев Владимир
                             p.reviews__name-position преподаватель
+        .feedback__form
+            .feedback__wrapper
+                .feedback__title
+                    .block-subtitle Связаться со мной
+                form.feedform(action="")
+                    .feedform__wrapper
+                        .feedform__group
+                            input(type="text" required).feedform__input
+                        .feedform__group
+                            input(type="email" required).feedform__input
+                        .feedform__group
+                            textarea(type="text" required).feedform__area
+                    .feedform__buttons
+                        button(type="submit").feedform__button Отправить
+                        button(type="reset").feedform__button Очистить
+            a(href="#up").btn__up
+                 +svg('btn__up--ic', 'arrow_down')
