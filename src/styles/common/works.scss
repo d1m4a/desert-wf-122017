@@ -20,6 +20,8 @@
         padding-top: 30px;
         background: wheat;
         border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 50px;
     }
 
     &__title {
@@ -104,6 +106,78 @@
         }
     }
 }
-.feedback{
+.feedform{
     
+    &__wrapper{
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+    &__input,
+    &__area{
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 12px 20px;
+        font-family: "robotoregular";
+        font-size: 1rem;
+        color: $gray;
+        outline: none;
+        border: none;
+    }
+    &__area{
+        height: 140px;
+        resize: none;
+    }
+    &__group{
+        margin-bottom: 20px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__buttons{
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+    &__button{
+        width: 50%;
+        border: none;
+        color: #fff;
+        background: $orange;
+        transition: all .3s ease;
+        font-family: "robotomedium", sans-serif;
+        font-size: 1rem;
+        height: 45px;
+        border-right: 2px solid $light-orange;
+        cursor: pointer;
+
+        &:last-child{
+            border: none;
+        }
+
+        &:hover{
+            background: $dark-orange;
+        }
+    }
+}
+.btn__up--wrapper{
+    margin: auto;
+    padding-bottom: 50px;
+}
+.btn__up{
+    display: inline-block;
+    padding: 20px;
+    background: transparent;
+    transition: all .3s ease;
+
+    &:hover{
+        background: rgba(255, 255, 255, .2);
+    }
+}
+.btn__up--ic{
+    width: 26px;
+    height: 16px;
+    fill: #fff;
+    transform: rotate(180deg);
 }

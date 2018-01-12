@@ -72,7 +72,8 @@ const slider = __webpack_require__(1);
 const map = __webpack_require__(2);
 const preloader = __webpack_require__(3);
 const hamburger = __webpack_require__(4);
-const authorize = __webpack_require__(5);
+const flip = __webpack_require__(5);
+const skills = __webpack_require__(6);
 
 slider(); /* иницииализируем слайдер */
 console.log('slider подключен');
@@ -86,9 +87,11 @@ console.log('прелоадер активирован');
 hamburger(); /* инициализация hamburger */
 console.log('hamburger активирован');
 
-authorize(); /* инициализируем скрипта авторизации */
-console.log('авторизация подключена');
+flip(); /* инициализируем скрипта flip */
+console.log('flip подключена');
 
+skills(); /* инициализируем скрипта skills */
+console.log('skills подключеы');
 
 
 
@@ -96,7 +99,7 @@ console.log('авторизация подключена');
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = slider = () => {
+module.exports = slider => {
 
     const slides = document.querySelectorAll('#slides .slide'); /* кол-во слайдов */
     const next = document.getElementById('next'); /* кнопочка следующий слайд */
@@ -147,7 +150,7 @@ module.exports = slider = () => {
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = initMap = () => {
+module.exports = initMap => {
 
     function initMap() {
 
@@ -261,7 +264,7 @@ module.exports = initMap = () => {
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = preloader = () => {
+module.exports = preloader => {
     document.body.onload = function(){
 
         setTimeout(function(){
@@ -277,7 +280,7 @@ module.exports = preloader = () => {
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = hamburger = () => {
+module.exports = hamburger => {
 
   const toggles = document.querySelectorAll(".menu__toggle");
   const container = document.querySelector(".menu__container");
@@ -309,7 +312,7 @@ module.exports = hamburger = () => {
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = authorize = () => {
+module.exports = flip => {
 
     const btnAuth = document.getElementById('auth-btn');
     const containerFlip = document.getElementById('flip');
@@ -325,6 +328,19 @@ module.exports = authorize = () => {
         containerFlip.classList.remove('author-card__cards--open');
         btnAuth.classList.remove('hidden');
     });
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = preloader => {
+    document.body.onload = function(){
+
+        setTimeout(function(){
+            console.log('skill');
+        }, 1000);
+    };
 };
 
 /***/ })

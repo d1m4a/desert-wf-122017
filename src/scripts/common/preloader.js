@@ -1,4 +1,4 @@
-module.exports = preloader = () => {
+module.exports = preloader => {
     document.body.onload = function(){
 
         setTimeout(function(){

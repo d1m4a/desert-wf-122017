@@ -1,4 +1,4 @@
-module.exports = googleMaps = () => {
+module.exports = googleMaps => {
 
 GoogleMapsLoader.KEY = "AIzaSyDhQNTgjvezECxXDnOfqiL3S36LVJp01z4";
 

@@ -1,4 +1,4 @@
-module.exports = initMap = () => {
+module.exports = initMap => {
 
     function initMap() {
 

@@ -49,13 +49,14 @@ block content
                 form.feedform(action="")
                     .feedform__wrapper
                         .feedform__group
-                            input(type="text" required).feedform__input
+                            input(type="text" required name="name" placeholder="Имя").feedform__input
                         .feedform__group
-                            input(type="email" required).feedform__input
+                            input(type="email" required name="email" placeholder="Email").feedform__input
                         .feedform__group
-                            textarea(type="text" required).feedform__area
+                            textarea(type="text" name="text" required placeholder="Ваше сообщение").feedform__area
                     .feedform__buttons
                         button(type="submit").feedform__button Отправить
                         button(type="reset").feedform__button Очистить
-            a(href="#up").btn__up
-                 +svg('btn__up--ic', 'arrow_down')
+            .btn__up--wrapper
+                a(href="#up").btn__up
+                    +svg('btn__up--ic', 'arrow_down')

@@ -1,4 +1,4 @@
-module.exports = hamburger = () => {
+module.exports = hamburger => {
 
   const toggles = document.querySelectorAll(".menu__toggle");
   const container = document.querySelector(".menu__container");

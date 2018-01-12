@@ -1,4 +1,4 @@
-module.exports = slider = () => {
+module.exports = slider => {
 
     const slides = document.querySelectorAll('#slides .slide'); /* кол-во слайдов */
     const next = document.getElementById('next'); /* кнопочка следующий слайд */

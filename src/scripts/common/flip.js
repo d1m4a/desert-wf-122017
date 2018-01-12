@@ -1,4 +1,4 @@
-module.exports = authorize = () => {
+module.exports = flip => {
 
     const btnAuth = document.getElementById('auth-btn');
     const containerFlip = document.getElementById('flip');

@@ -208,13 +208,13 @@
             <form class="feedform" action="">
               <div class="feedform__wrapper">
                 <div class="feedform__group">
-                  <input class="feedform__input" type="text" required>
+                  <input class="feedform__input" type="text" required name="name" placeholder="Имя">
                 </div>
                 <div class="feedform__group">
-                  <input class="feedform__input" type="email" required>
+                  <input class="feedform__input" type="email" required name="email" placeholder="Email">
                 </div>
                 <div class="feedform__group">
-                  <textarea class="feedform__area" type="text" required></textarea>
+                  <textarea class="feedform__area" type="text" name="text" required placeholder="Ваше сообщение"></textarea>
                 </div>
               </div>
               <div class="feedform__buttons">
@@ -222,10 +222,11 @@
                 <button class="feedform__button" type="reset">Очистить</button>
               </div>
             </form>
-          </div><a class="btn__up" href="#up">
-                    <svg class="btn__up--ic">
-                      <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
-                    </svg></a>
+          </div>
+          <div class="btn__up--wrapper"><a class="btn__up" href="#up">
+                      <svg class="btn__up--ic">
+                        <use xlink:href="/assets/images/svg/symbols.svg#arrow_down"></use>
+                      </svg></a></div>
         </div>
       </div>
     </main>
