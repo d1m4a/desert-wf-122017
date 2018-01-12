@@ -334,13 +334,8 @@ module.exports = flip => {
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = preloader => {
-    document.body.onload = function(){
+module.exports = skills => {
 
-        setTimeout(function(){
-            console.log('skill');
-        }, 1000);
-    };
 };
 
 /***/ })
